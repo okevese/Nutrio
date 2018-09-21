@@ -1,0 +1,283 @@
+{
+  "openapi" : "3.0.0",
+  "servers" : [ {
+    "url" : "http://localhost:3000/api/v1",
+    "description" : "Development server"
+  } ],
+  "info" : {
+    "description" : "Spoonacular API endpoints consumed in Nutrio.",
+    "version" : "1.0.0",
+    "title" : "Nutrio"
+  },
+  "paths" : {
+    
+    "/joke" : {
+      "get" : {
+        "description" : " Returns a random fook joke",
+        "responses" : {
+          "200" : {
+            "description" : "An object with key, text, containing the joke",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "text" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+
+    "/trivia" : {
+      "get" : {
+        "description" : " Returns a random fook trivia",
+        "responses" : {
+          "200" : {
+            "description" : "An object with key, text, containing the food trivia",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "text" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+
+    "/meal_plan" : {
+      "get" : {
+        "description" : "Generates a meal plan with three meals per day (Breakfast, lunch and dinner)",
+        "responses" : {
+          "200" : {
+            "description" : "Object containing keys, meal and nutrients.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "meals" : {
+                      "type" : "array",
+                      "items" : {
+                        "type" : "object",
+                        "properties" : {
+                          "id" : {
+                            "type" : "integer"
+                          },
+                          "title" : {
+                            "type" : "string"
+                          },
+                          "readyInMinutes" : {
+                            "type" : "number"
+                          },
+                          "image" : {
+                            "type" : "string"
+                          },
+                          "imageUrls" : {
+                            "type" : "string"
+                          }
+                        }
+                      }
+                    },
+                    "nutrients" : {
+                      "properties" : {
+                        "calories" : {
+                          "type" : "string"
+                        },
+                        "protein" : {
+                          "type" : "string"
+                        },
+                        "fat" : {
+                          "type" : "string"
+                        },
+                        "carbohydrates" : {
+                          "type" : "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+
+    "/daily_calorie" : {
+      "get" : {
+        "description" : "Find multiple recipes that added up reach your daily caloric needs",
+        "responses" : {
+          "200" : {
+            "description" : "Object containing keys, meal and nutrients.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "meals" : {
+                      "type" : "array",
+                      "items" : {
+                        "type" : "object",
+                        "properties" : {
+                          "id" : {
+                            "type" : "integer"
+                          },
+                          "title" : {
+                            "type" : "string"
+                          },
+                          "readyInMinutes" : {
+                            "type" : "number"
+                          },
+                          "image" : {
+                            "type" : "string"
+                          },
+                          "imageUrls" : {
+                            "type" : "string"
+                          }
+                        }
+                      }
+                    },
+                    "nutrients" : {
+                      "properties" : {
+                        "calories" : {
+                          "type" : "string"
+                        },
+                        "protein" : {
+                          "type" : "string"
+                        },
+                        "fat" : {
+                          "type" : "string"
+                        },
+                        "carbohydrates" : {
+                          "type" : "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+
+    "/replace_ingredient" : {
+      "get" : {
+        "description" : " Returns an ingredient substitute",
+        "responses" : {
+          "200" : {
+            "description" : "Returns an object with keys, status, ingredient, substitute and a message",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "status" : {
+                      "type" : "string"
+                    },
+                    "ingredient" : {
+                      "type" : "string"
+                    },
+                    "substitute" : {
+                      "type" : "array",
+                      "items" : {
+                        "type" : "string"
+                      }
+                    },
+                    "message" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "The substitute could not be found",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "statusCode" : {
+                      "type" : "number"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+
+    "/answer" : {
+      "get" : {
+        "description" : " Returns a quick answer to a food question",
+        "responses" : {
+          "200" : {
+            "description" : "An object containing the answer, an image and the type.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "answer" : {
+                      "type" : "string"
+                    },
+                    "image" : {
+                      "type" : "string"
+                    },
+                    "type" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Incorrect question format",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "statusCode" : {
+                      "type" : "number"
+                    },
+                    "message" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
