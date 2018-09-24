@@ -98,6 +98,7 @@ const mealPlan = (req, res) => {
  */
 
 const renderMealPlan = (req, res, responseBody) => {
+  console.log(responseBody.mealPlan.meals[0].id);
   let message;
   if (!(responseBody.mealPlan.meals instanceof Array)) {
     message = "API lookup error";
@@ -115,6 +116,34 @@ const renderMealPlan = (req, res, responseBody) => {
   });
 }
 
+const recipeInstructions = (req, res) => {
+  const path = '/api/v1/recipe_instructions';
+  req.param.id = 324694;
+  const requestOptions = {
+    url: apiOptions.server + path,
+    method: "GET",
+    json: {},
+    qs: {
+      id: req.param.id
+    }
+  };
+  request(requestOptions, (err, response, body, next) => {
+    if (err) return next(err);
+    renderRecipeInstructions(req, res, body);
+  });
+}
+
+
+const renderRecipeInstructions = (req, res, responseBody) => {
+  res.status(200).json(responseBody);
+  res.render('recipe_instructions', {
+    title: 'Nutrio recipe instructions',
+    pageHeader: {
+      title: 'Recipe Instructions', 
+      strapline: 'Instructions to prepare your chosen meal'
+    }
+  });
+} 
 
 
 /**
@@ -169,5 +198,6 @@ export {
   foodTrivia,
   mealPlan,
   recipeDailyCalorie,
+  recipeInstructions,
   about
 };
