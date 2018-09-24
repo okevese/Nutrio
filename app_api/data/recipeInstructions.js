@@ -1,18 +1,14 @@
 import unirest from 'unirest';
 import config from '../../config/index';
-
-const host = config.spoonacular_api.hostname;
-const endpoint = "/recipes/324694/analyzedInstructions?stepBreakdown=true";
 const secret = config.food_api_secret;
-
-const testData = {
-  id: 262682,
-  includeNutrition: false
-};
+const host = config.spoonacular_api.hostname;
 
 const getRecipeInstructions = (req, res, next) => {
+  const endpoint = `/recipes/${req.param.id}/analyzedInstructions`;
   const url = host + endpoint;
+  
   console.log(url);
+  console.log(req.param.id);
 
   unirest.get(url)
   .header("X-Mashape-Key", secret)
