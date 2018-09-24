@@ -5,13 +5,15 @@ import {
   foodTrivia,
   mealPlan,
   recipeDailyCalorie,
-  about 
+  about, 
+  recipeInstructions
 } from '../controllers/main';
 
 router.get('/', foodTrivia);
 router.get('/joke', foodJoke);
 router.get('/meals', mealPlan);
 router.get('/daily_calorie', recipeDailyCalorie);
+router.get('/instructions', recipeInstructions);
 router.get('/joke', foodJoke);
 router.get('/trivia', foodTrivia);
 router.get('/about', about);
