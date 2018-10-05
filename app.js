@@ -1,4 +1,6 @@
 import express from 'express';
+import session from 'express-session';
+import cors from 'cors';
 import favicon from 'serve-favicon';
 import logger from 'morgan';
 import path from 'path';
@@ -38,6 +40,7 @@ app.use(helmet.hsts({ maxAge: sixtyDaysInSeconds }));
 // URL: http://localhost:3000/api-docs/ 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
