@@ -53,5 +53,4 @@ userSchema.methods.generateJwt = function() {
   }, process.env.JWT_SECRET);
 }
 
-const User = mongoose.model("User", userSchema);
-export default User;
+mongoose.model("User", userSchema);
