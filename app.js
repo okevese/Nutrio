@@ -9,7 +9,11 @@ import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './swagger.json';
+import passport from 'passport';
+
 import './app_api/models/db';
+import './app_api/models/User';
+import './app_api/auth/passport';
 
 import routes from './app_server/routes/index';
 import routesApi  from './app_api/routes/index';
