@@ -1,16 +1,15 @@
 import mongoose from 'mongoose';
 import passport from 'passport';
+import { validationResult } from 'express-validator/check';
+
 const User = mongoose.model('User');
 
 // TODO: Use express-validator to remove the email, password, name checks
 const register = (req, res, next) => {
-  if (!req.body.email || !req.body.name) {
-    return sendJsonResponse(res, 422, { "message": "Email and Name feilds required" });
-  }
-
-  if (!req.body.password) {
-    return sendJsonResponse(res, 422, { "message": "Password is required" });
-  }
+  const errors = validationResult(req);
+  if(!errors.isEmpty()) {
+    return res.status(412).json({ errors: errors.array() });
+  } 
 
   const user = new User();
   user.name = req.body.name;
