@@ -1,4 +1,5 @@
 import express from 'express';
+import { check } from 'express-validator/check';
 const router = express.Router();
 
 import { register } from '../middleware/authentication';
@@ -30,7 +31,11 @@ router.get('/recipe_instructions', getRecipeInstructions, recipeInstructions);
 router.get('/replace_ingredient', getReplaceIngredient, replaceIngredient);
 router.get('*', unknownRoute);
 
-router.post('/register', register);
+router.post('/register', [
+  check('name').exists().withMessage('Name field is required'),
+  check('email').exists().withMessage('Email field is required'), 
+  check('password').exists().withMessage('Password is required')
+    .isLength({ min: 6 }).withMessage('must be at least 6 chars long')], register);
 // router.post('/login', login);
 router.post('/visual_nutrients', getVisualRecipeNutrition(), visualRecipeNutrition);
 
