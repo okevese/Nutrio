@@ -36,7 +36,8 @@ router.post('/register', [
   check('email').exists().withMessage('Email field is required'), 
   check('password').exists().withMessage('Password is required')
     .isLength({ min: 6 }).withMessage('must be at least 6 chars long')], register);
-router.post('/login', login);
+    
+router.post('/login', [check('email').exists(), check('password').exists()], login);
 router.post('/visual_nutrients', getVisualRecipeNutrition(), visualRecipeNutrition);
 
 export default router
