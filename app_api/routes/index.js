@@ -2,7 +2,7 @@ import express from 'express';
 import { check } from 'express-validator/check';
 const router = express.Router();
 
-import { register } from '../middleware/authentication';
+import { register, login } from '../middleware/authentication';
 import getFoodJoke from '../data/foodJoke';
 import foodJoke from '../middleware/foodJoke';
 import getFoodTrivia from '../data/foodTrivia';
@@ -36,7 +36,7 @@ router.post('/register', [
   check('email').exists().withMessage('Email field is required'), 
   check('password').exists().withMessage('Password is required')
     .isLength({ min: 6 }).withMessage('must be at least 6 chars long')], register);
-// router.post('/login', login);
+router.post('/login', login);
 router.post('/visual_nutrients', getVisualRecipeNutrition(), visualRecipeNutrition);
 
 export default router

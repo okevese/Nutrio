@@ -4,8 +4,9 @@ import { validationResult } from 'express-validator/check';
 
 const User = mongoose.model('User');
 
-// TODO: Use express-validator to remove the email, password, name checks
+
 const register = (req, res, next) => {
+  // Finds the validation errors in this request and wraps them in an object
   const errors = validationResult(req);
   if(!errors.isEmpty()) {
     return res.status(412).json({ errors: errors.array() });
@@ -26,9 +27,19 @@ const register = (req, res, next) => {
     .catch(next);
 }
 
+
+const login = (req, res, next) => {
+  const errors = validationResult(req);
+  if(!errors.isEmpty()) {
+    return res.status(412).json({ errors: errors.array() });
+  } 
+}
+
+
+
 const sendJsonResponse = (res, status, content) => {
   res.status(status);
   res.json(content);
 }
 
-export { register };
+export { register, login };
