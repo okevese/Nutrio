@@ -1,5 +1,21 @@
 {
   "server": {
-    "port": 80
+    "port": 3020
+  },
+  "database": {
+
+  },
+  "spoonacular_api": {
+    "hostname":  "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com",
+    "endpoints": {
+      "jokes": "/food/jokes/random",
+      "trivia": "/food/trivia/random",
+      "meal_plan": "/recipes/mealplans/generate",
+      "answer": "/recipes/quickAnswer",
+      "recipe_daily": "/recipes/mealplans/generate",
+      "replace_ingredient": "/food/ingredients/substitutes",
+      "visual_nutrition": "/recipes/visualizeNutrition"
+    }
   }
+  
 }
