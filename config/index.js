@@ -2,10 +2,11 @@
 require('dotenv').config();
 import fs from 'fs';
 import path from 'path';
+process.env.NODE_ENV = 'production'; 
 const NODE_ENV = process.env.NODE_ENV;
 let configBuffer = null;
 
-// Init congig buffer according to the NODE_ENV
+// Init config buffer according to the NODE_ENV
 // The default environment is 'development'
 switch(NODE_ENV) {
   case 'production':
@@ -17,13 +18,13 @@ switch(NODE_ENV) {
       'staging.json'), 'utf-8');
     break;
   default:
-      configBuffer = fs.readFileSync(path.resolve(__dirname,
-        'dev.json'), 'utf-8');
+    configBuffer = fs.readFileSync(path.resolve(__dirname,
+      'dev.json'), 'utf-8');
 }
 
 let config = JSON.parse(configBuffer);
 config.food_api_secret = process.env.API_KEY;
-config.db_username = process.env.DB_USER;
-config.db_password = process.env.DB_PASSWORD;
+config.dbURI = process.env.MONGODB_URI;
+
 
 export default config;
