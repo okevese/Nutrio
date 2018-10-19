@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 mongoose.Promise = global.Promise;
 
 import config from '../../config/index';
-const dbURI = config.database.dbURI;
+
+const dbURI = config.dbURI;
 mongoose.connect(dbURI, { useNewUrlParser: true });
 const db = mongoose.connection;
 
@@ -18,3 +19,4 @@ process.on('SIGINT', () => {
     process.exit(0);
   });
 });
+
