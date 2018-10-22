@@ -17,6 +17,7 @@ import './app_api/auth/passport';
 import routes from './app_server/routes/index';
 import routesApi  from './app_api/routes/index';
 import errorHandler from './app_api/middleware/errorHandlers/genericErrorHandler.js';
+import unauthorized from './app_api/middleware/errorHandlers/unauthorized';
 
 const app = express();
 
@@ -53,6 +54,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/api/v1', routesApi);
 app.use(errorHandler);
+app.use(unauthorized);
 
 /** 
 app.use(function(err, req, res, next) {
