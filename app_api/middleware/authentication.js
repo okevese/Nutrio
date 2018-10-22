@@ -28,7 +28,7 @@ const register = (req, res, next) => {
 }
 
 
-const login = (req, res) => {
+const login = (req, res, next) => {
   const errors = validationResult(req);
   if(!errors.isEmpty()) {
     return res.status(412).json({ errors: errors.array() });
@@ -45,7 +45,7 @@ const login = (req, res) => {
     } else {
       sendJsonResponse(res, 401, info);
     }
-  })(req, res, next); // Makes `req, res, next` available to passport
+  })(req, res); // Makes `req, res, next` available to passport
 }
 
 
