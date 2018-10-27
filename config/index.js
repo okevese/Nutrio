@@ -23,7 +23,5 @@ switch(NODE_ENV) {
 
 let config = JSON.parse(configBuffer);
 config.food_api_secret = process.env.API_KEY;
-config.db_username = process.env.DB_USER;
-config.db_password = process.env.DB_PASSWORD;
 
 export default config;
