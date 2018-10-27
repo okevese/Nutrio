@@ -7,6 +7,9 @@ const getRecipeInstructions = (req, res, next) => {
   const endpoint = `/recipes/${req.query.id}/analyzedInstructions`;
   const url = host + endpoint;
 
+  console.log(req.query.id)
+  console.log(url);
+
   unirest.get(url)
   .header("X-Mashape-Key", secret)
   .header("Accept", "application/json")
