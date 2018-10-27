@@ -119,7 +119,8 @@ const renderMealPlan = (req, res, responseBody) => {
 
 const recipeInstructions = (req, res) => {
   const path = '/api/v1/recipe_instructions';
-  req.query.id = 324694;
+  console.log(req.query.id);
+
   const requestOptions = {
     url: apiOptions.server + path,
     method: "GET",

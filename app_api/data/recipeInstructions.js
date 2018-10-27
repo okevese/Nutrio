@@ -6,8 +6,7 @@ const host = config.spoonacular_api.hostname;
 const getRecipeInstructions = (req, res, next) => {
   const endpoint = `/recipes/${req.query.id}/analyzedInstructions`;
   const url = host + endpoint;
-
-  console.log(req.query.id)
+  
   console.log(url);
 
   unirest.get(url)
