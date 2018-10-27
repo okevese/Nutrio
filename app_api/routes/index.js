@@ -1,6 +1,12 @@
 import express from 'express';
 import { check } from 'express-validator/check';
 const router = express.Router();
+import jwt from 'express-jwt';
+
+const auth = jwt({
+  secret: process.env.JWT_SECRET,
+  userProperty: 'payload'  // Property on req to be payload
+});
 
 import { register, login } from '../middleware/authentication';
 import getFoodJoke from '../data/foodJoke';
@@ -24,7 +30,7 @@ import unknownRoute from '../middleware/errorHandlers/undefinedRoute';
 
 router.get('/joke', getFoodJoke, foodJoke);
 router.get('/trivia', getFoodTrivia, foodTrivia);
-router.get('/meal_plan', getMealPlan, mealPlan);
+router.get('/meal_plan', auth, getMealPlan, mealPlan);
 router.get('/answer', getQuickAnswer(), quickAnswer);
 router.get('/daily_calorie_recipe', getRecipeDailyCalorie, recipeDailyCalorie);
 router.get('/recipe_instructions', getRecipeInstructions, recipeInstructions);
