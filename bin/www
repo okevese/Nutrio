@@ -14,7 +14,7 @@ import config from '../config/index';
 /**
  * Get port from environment and store in Express.
  */
-let port = normalizePort(config.server.port);
+let port = normalizePort(process.env.PORT || config.server.port);
 app.set('port', port);
 
 /**
