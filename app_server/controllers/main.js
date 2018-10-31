@@ -137,7 +137,7 @@ const recipeInstructions = (req, res) => {
 
 
 const renderRecipeInstructions = (req, res, responseBody) => {
-  res.status(200).json(responseBody);
+  res.status(200).json(responseBody[0].steps);
   res.render('recipe_instructions', {
     title: 'Nutrio recipe instructions',
     pageHeader: {
