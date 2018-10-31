@@ -2,6 +2,9 @@
   "name": "nutrio",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "8.10.0"
+  },
   "scripts": {
     "start": "nodemon ./bin/www --exec babel-node --presets es2015,stage-2",
     "test": "mocha --timeout 10000 --require babel-register ./test/spoonacular_api"
