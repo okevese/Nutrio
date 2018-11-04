@@ -15,8 +15,8 @@ const mealSchema = new mongoose.Schema({
     fat: Number,
     carbohydrates: Number
   },
-  createdAt: { type: Date, default: Date.now }
-})
+  createdAt: { type: Date, default: Date.now, expires: '1d' },
+});
 
 const Meal = mongoose.model("Meal", mealSchema);
 export default Meal;
