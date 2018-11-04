@@ -185,8 +185,8 @@ const renderRecipeDailyCalorie = (req, res, responseBody) => {
       title: 'Daily Calorie Recipes', 
       strapline: 'Find multiple recipes that, when added up, reach your daily caloric needs.'
     },
-    meals: responseBody.meals,
-    nutrients: responseBody.nutrients,
+    meals: responseBody.recipeDailyCalorie.meals,
+    nutrients: responseBody.recipeDailyCalorie.nutrients,
     message: message
   });
 }
