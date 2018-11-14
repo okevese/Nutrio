@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
 
 const recipeSchema = new mongoose.Schema({
-  instructions: [{
+  name: String,
+  steps: [{
     number: Number,
     step: String,
     ingredients: [{
@@ -9,14 +10,14 @@ const recipeSchema = new mongoose.Schema({
       name: String,
       image: String
     }],
-    equipments: [{
+    equipment: [{
       id: Number,
       name: String,
       image: String
     }]
   }],
-  createdAt: { type: Date, default: Date.now, expires: '1d' },
-});
+  createdAt: { type: Date, default: Date.now, expires: '1d' }
+});  
 
 const Recipe = mongoose.model("Recipe", recipeSchema);
 export default Recipe;
