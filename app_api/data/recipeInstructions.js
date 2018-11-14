@@ -14,8 +14,10 @@ const getRecipeInstructions = (req, res, next) => {
   .header("Accept", "application/json")
   .end(function(response) {
     if (response.error) {
-      let err = new Error('A Server Error.');
-      err.status = 500;
+      let err = new Error('Something happened.');
+      
+      // `error` and `code` are properties of the unirest response object
+      err.status = response.code;
       console.error(response.error);
       return next(err);
     }

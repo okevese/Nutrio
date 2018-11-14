@@ -15,7 +15,9 @@ const getFoodJoke = (req, res, next) => {
   .end(response => {
     if(response.error) {
       let err = new Error('A Server error.');
-      err.status = 500;
+      
+      // `error` and `code` are properties of the unirest response object
+      err.status = response.code;
       console.error(response.error);
       return next(err);
     }

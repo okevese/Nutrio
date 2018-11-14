@@ -16,6 +16,8 @@ const getFoodTrivia = (req, res, next) => {
   .end(function (response) {
     if(response.error) {
       let err = new Error('A problem occured.');
+
+      // `error` and `status` are properties of the unirest response object
       err.status = response.status;
       console.error(response.error);
       return next(err);
