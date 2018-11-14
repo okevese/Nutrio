@@ -117,6 +117,10 @@ const renderMealPlan = (req, res, responseBody) => {
 }
 
 
+/**
+ * @var {string} path URI for the recipeInstructions endpoint
+ * @var {object} requestOptions Defines the request
+ */
 const recipeInstructions = (req, res) => {
   const path = '/api/v1/recipe_instructions';
   console.log(req.query.id);
@@ -136,8 +140,12 @@ const recipeInstructions = (req, res) => {
 }
 
 
+/**
+ * To separate the controller for rendering the view from the call to the API
+ * @param {object} responseBody 
+ */
 const renderRecipeInstructions = (req, res, responseBody) => {
-  res.status(200).json(responseBody[0].steps);
+  res.status(200).json(responseBody);
   res.render('recipe_instructions', {
     title: 'Nutrio recipe instructions',
     pageHeader: {
