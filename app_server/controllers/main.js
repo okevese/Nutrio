@@ -142,16 +142,26 @@ const recipeInstructions = (req, res) => {
 
 /**
  * To separate the controller for rendering the view from the call to the API
- * @param {object} responseBody 
+ * @param {object} responseBody The returned recipe instructions, after saving in database
  */
 const renderRecipeInstructions = (req, res, responseBody) => {
-  res.status(200).json(responseBody);
+  res.status(200).json(responseBody.recipe.steps);
+  let ingredientList = [];
+
+  // Extract the ingredient name from the response
+  for (let step of responseBody.recipe.steps) { // `steps` is an array of objects, 'step`
+    for (let ingredient of step.ingredients) {  // Each 'step` has `ingredients`, an array of objects or empty
+      ingredientList.push(ingredient.name);
+    }
+  }
+  console.log(ingredientList);
   res.render('recipe_instructions', {
     title: 'Nutrio recipe instructions',
     pageHeader: {
       title: 'Recipe Instructions', 
       strapline: 'Instructions to prepare your chosen meal'
-    }
+    },
+    ingredients: ingredientList
   });
 } 
 
