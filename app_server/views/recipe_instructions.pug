@@ -6,3 +6,16 @@ block content
       .col-lg-6
         h1= pageHeader.title
           small &nbsp; #{pageHeader.strapline}
+  .row
+    .col-xs-12.col-sm-6
+      h2 Ingredients
+      each ingredient in ingredients
+        .media
+          a.pull-left(href='#')
+            img.media-object(src='...', alt='...')
+          .media-body
+            h3.media-heading #{ingredient}
+    .col-xs-12.col-sm-6
+      h2 Steps
+      each step in steps
+        h3 #{step.number}.

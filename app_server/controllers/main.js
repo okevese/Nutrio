@@ -145,13 +145,15 @@ const recipeInstructions = (req, res) => {
  * @param {object} responseBody The returned recipe instructions, after saving in database
  */
 const renderRecipeInstructions = (req, res, responseBody) => {
-  res.status(200).json(responseBody.recipe.steps);
+  // res.status(200).json(responseBody.recipe.steps);
   let ingredientList = [];
 
   // Extract the ingredient name from the response
   for (let step of responseBody.recipe.steps) { // `steps` is an array of objects, 'step`
     for (let ingredient of step.ingredients) {  // Each 'step` has `ingredients`, an array of objects or empty
-      ingredientList.push(ingredient.name);
+      if (!ingredientList.includes(ingredient.name)) { // Remove repetitions of ingredient name in list
+        ingredientList.push(ingredient.name);
+      }
     }
   }
   console.log(ingredientList);
@@ -161,7 +163,8 @@ const renderRecipeInstructions = (req, res, responseBody) => {
       title: 'Recipe Instructions', 
       strapline: 'Instructions to prepare your chosen meal'
     },
-    ingredients: ingredientList
+    ingredients: ingredientList,
+    steps: responseBody.recipe.steps
   });
 } 
 
