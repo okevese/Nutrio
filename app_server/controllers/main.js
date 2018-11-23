@@ -164,7 +164,8 @@ const renderRecipeInstructions = (req, res, responseBody) => {
       strapline: 'Instructions to prepare your chosen meal'
     },
     ingredients: ingredientList,
-    steps: responseBody.recipe.steps
+    steps: responseBody.recipe.steps,
+    
   });
 } 
 

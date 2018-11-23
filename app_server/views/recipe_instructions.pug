@@ -17,5 +17,10 @@ block content
             h3.media-heading #{ingredient}
     .col-xs-12.col-sm-6
       h2 Steps
+      // The number for each step in `responseBody.recipe.steps`
       each step in steps
         h3 #{step.number}.
+        
+          // Instructions for each stepp
+          p
+            | #{step.step}
