@@ -116,15 +116,21 @@ const renderMealPlan = (req, res, responseBody) => {
   });
 }
 
+
+/**
+ * @var {string} path URI for the recipeInstructions endpoint
+ * @var {object} requestOptions Defines the request
+ */
 const recipeInstructions = (req, res) => {
   const path = '/api/v1/recipe_instructions';
-  req.param.id = 324694;
+  console.log(req.query.id);
+
   const requestOptions = {
     url: apiOptions.server + path,
     method: "GET",
     json: {},
     qs: {
-      id: req.param.id
+      id: req.query.id
     }
   };
   request(requestOptions, (err, response, body, next) => {
@@ -134,14 +140,31 @@ const recipeInstructions = (req, res) => {
 }
 
 
+/**
+ * To separate the controller for rendering the view from the call to the API
+ * @param {object} responseBody The returned recipe instructions, after saving in database
+ */
 const renderRecipeInstructions = (req, res, responseBody) => {
-  res.status(200).json(responseBody);
+  // res.status(200).json(responseBody.recipe.steps);
+  let ingredientList = [];
+  
+  // Extract the ingredient name from the response
+  for (let step of responseBody.recipe.steps) { // `steps` is an array of objects, 'step`
+    for (let ingredient of step.ingredients) {  // Each 'step` has `ingredients`, an array of objects or empty  
+      if (!ingredientList.some(item => item.name === ingredient.name)) { // Removes repeating ingredients
+        ingredientList.push(ingredient);
+      }  
+    } 
+  }
+  
   res.render('recipe_instructions', {
     title: 'Nutrio recipe instructions',
     pageHeader: {
       title: 'Recipe Instructions', 
       strapline: 'Instructions to prepare your chosen meal'
-    }
+    },
+    steps: responseBody.recipe.steps, 
+    ingredients: ingredientList
   });
 } 
 
@@ -183,8 +206,8 @@ const renderRecipeDailyCalorie = (req, res, responseBody) => {
       title: 'Daily Calorie Recipes', 
       strapline: 'Find multiple recipes that, when added up, reach your daily caloric needs.'
     },
-    meals: responseBody.meals,
-    nutrients: responseBody.nutrients,
+    meals: responseBody.recipeDailyCalorie.meals,
+    nutrients: responseBody.recipeDailyCalorie.nutrients,
     message: message
   });
 }

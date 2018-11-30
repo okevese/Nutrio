@@ -13,9 +13,10 @@ block content
         each meal in meals
           .col-xs-12.list-group-item
             h4
-              a= meal.title
+              a(href='/instructions?id=' + meal.id)= meal.title
               span.badge.pull-right.badge-default #{meal.readyInMinutes} min
             p #{meal.servings} servings
+            p #{meal.id} 
 
     .col-xs-12.col-sm-6
       form.form-horizontal(action="/daily_calorie", method="get", role="form")

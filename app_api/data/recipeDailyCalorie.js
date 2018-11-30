@@ -23,11 +23,13 @@ const getRecipeDailyCalorie = (req, res, next) => {
   .end(function (response) {
     if(response.error) {
       let err = new Error('A Server error.');
-      err.status = 500;
+
+       // `error` and `code` are properties of the unirest response object
+      err.status = response.code;
       console.error(response.error);
       return next(err);
     }
-    // console.log(response.status, response.headers, response.body);
+    console.log(response.status, response.headers, response.body);
     res.locals.dailyCalorie = response.body;
     next();
   });

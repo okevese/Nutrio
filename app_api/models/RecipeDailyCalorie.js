@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const mealSchema = new mongoose.Schema({
+const recipeDailyCalorieSchema = new mongoose.Schema({
   meals: [{
     id: Number,
     title: String,
@@ -18,5 +18,5 @@ const mealSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now, expires: '1d' },
 });
 
-const Meal = mongoose.model("Meal", mealSchema);
-export default Meal;
+const RecipeDailyCalorie = mongoose.model("RecipeDailyCalorie", recipeDailyCalorieSchema);
+export default RecipeDailyCalorie;
