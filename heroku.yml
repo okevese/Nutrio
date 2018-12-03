@@ -1,0 +1,7 @@
+setup:
+  addons:
+    - plan: 'mongolab:sandbox'
+      as: MONGODB
+  config: {}
+build:
+  languages: []
