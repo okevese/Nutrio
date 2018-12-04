@@ -7,10 +7,11 @@
     "npm": "6.4.1"
   },
   "scripts": {
-    "start": "nodemon ./bin/www --exec babel-node --presets es2015,stage-2",
+    "start": "nodemon ./bin/www --exec babel-node --presets env,stage-2",
     "test": "mocha --timeout 10000 --require babel-register ./test/spoonacular_api"
   },
   "dependencies": {
+    "babel-preset-env": "^1.7.0",
     "bluebird": "^3.5.1",
     "body-parser": "~1.18.2",
     "chai-arrays": "^2.0.0",
