@@ -1,8 +1,8 @@
 FROM node:8
 MAINTAINER okevese@gmail.com
 WORKDIR /app
-COPY package*.json /app/
+COPY package*.json /app
 RUN npm install
-COPY . /app/
+COPY . /app
 EXPOSE 3000
 CMD ["npm", "start"]
