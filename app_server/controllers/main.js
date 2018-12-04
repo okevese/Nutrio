@@ -13,7 +13,7 @@ const apiOptions = {
  * @var {object} requestOptions Defines the request
  */
 
-const foodJoke = (req, res, next) => {
+const foodJoke = (req, res) => {
   const path = '/api/v1/joke';
   const requestOptions = {
     url: apiOptions.server + path,
@@ -22,7 +22,7 @@ const foodJoke = (req, res, next) => {
   };
   request(requestOptions, (err, response, body) => {
     console.log(body);
-    if (err) return next(err);
+    //if (err) return next(err);
     renderJoke(req, res, body);
   });
 }
@@ -40,7 +40,7 @@ const renderJoke = (req, res, responseBody) => {
  * @var {object} requestOptions Defines the request
  */
 
-const foodTrivia = (req, res, next) => {
+const foodTrivia = (req, res) => {
   const path = '/api/v1/trivia';
   const requestOptions = {
     url: apiOptions.server + path,
@@ -48,7 +48,7 @@ const foodTrivia = (req, res, next) => {
     json: {}
   };
   request(requestOptions, (err, response, body) => {
-    if (err) return next(err);
+    //if (err) return next(err);
     renderHome(req, res, body);
   });
 }
@@ -72,7 +72,7 @@ const renderHome = (req, res, responseBody) => {
  * @var {object} requestOptions Defines the request
  */
 
-const mealPlan = (req, res, next) => {
+const mealPlan = (req, res) => {
   const path = '/api/v1/meal_plan';
   const requestOptions = {
     url: apiOptions.server + path,
@@ -86,7 +86,7 @@ const mealPlan = (req, res, next) => {
     }
   }; 
   request(requestOptions, (err, response, body) => {
-    if (err) return next(err);  
+    //if (err) return next(err);  
     renderMealPlan(req, res, body);
   });
 }
@@ -121,7 +121,7 @@ const renderMealPlan = (req, res, responseBody) => {
  * @var {string} path URI for the recipeInstructions endpoint
  * @var {object} requestOptions Defines the request
  */
-const recipeInstructions = (req, res, next) => {
+const recipeInstructions = (req, res) => {
   const path = '/api/v1/recipe_instructions';
   console.log(req.query.id);
 
@@ -134,7 +134,7 @@ const recipeInstructions = (req, res, next) => {
     }
   };
   request(requestOptions, (err, response, body) => {
-    if (err) return next(err);
+    //if (err) return next(err);
     renderRecipeInstructions(req, res, body);
   });
 }
@@ -175,7 +175,7 @@ const renderRecipeInstructions = (req, res, responseBody) => {
  * @var {object} requestOptions Defines the request
  */
 
-const recipeDailyCalorie = (req, res, next) => {
+const recipeDailyCalorie = (req, res) => {
   const path = '/api/v1/daily_calorie_recipe';
   const requestOptions = {
     url: apiOptions.server + path,
@@ -187,7 +187,7 @@ const recipeDailyCalorie = (req, res, next) => {
     }
   };
   request(requestOptions, (err, response, body) => {
-    if (err) return next(err);  
+    //if (err) return next(err);  
     renderRecipeDailyCalorie(req, res, body);
   });
 }
