@@ -4,17 +4,15 @@
  * Module dependencies.
  */
 
-import app from '../app';
+const app = require('../app');
 const debug = require('debug')('nutrio:server');
-import http from 'http';
-//  const config = require(`${__base}config`);
-import config from '../config/index';
-
+const http = require('http');
+const config = require('../config/index');
 
 /**
  * Get port from environment and store in Express.
  */
-let port = normalizePort(process.env.PORT || config.server.port);
+let port = normalizePort(process.env.PORT || config.default.server.port);
 app.set('port', port);
 
 /**

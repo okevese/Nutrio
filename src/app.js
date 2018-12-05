@@ -7,7 +7,7 @@ import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import swaggerUi from 'swagger-ui-express';
-import swaggerDocument from './swagger.json';
+import swaggerDocument from '../swagger.json';
 import passport from 'passport';
 
 import './app_api/models/db';
@@ -67,4 +67,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 */
-export default app;
+
+module.exports = app;
