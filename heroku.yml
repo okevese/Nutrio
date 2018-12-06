@@ -6,4 +6,4 @@ setup:
 build:
   languages: []
 run:
-  web: node app.js
+  web: npm start
