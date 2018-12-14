@@ -22,7 +22,7 @@ const foodJoke = (req, res) => {
   };
   request(requestOptions, (err, response, body) => {
     console.log(body);
-    //if (err) return next(err);
+    if (err) return next(err);
     renderJoke(req, res, body);
   });
 }
@@ -48,7 +48,7 @@ const foodTrivia = (req, res) => {
     json: {}
   };
   request(requestOptions, (err, response, body) => {
-    //if (err) return next(err);
+    if (err) return next(err);
     renderHome(req, res, body);
   });
 }
@@ -86,7 +86,7 @@ const mealPlan = (req, res) => {
     }
   }; 
   request(requestOptions, (err, response, body) => {
-    //if (err) return next(err);  
+    if (err) return next(err);  
     renderMealPlan(req, res, body);
   });
 }
@@ -187,7 +187,7 @@ const recipeDailyCalorie = (req, res) => {
     }
   };
   request(requestOptions, (err, response, body) => {
-    //if (err) return next(err);  
+    if (err) return next(err);  
     renderRecipeDailyCalorie(req, res, body);
   });
 }
