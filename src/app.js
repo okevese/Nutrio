@@ -21,7 +21,6 @@ import unauthorized from './app_api/middleware/errorHandlers/unauthorized';
 
 const app = express();
 
-// view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'pug');
 
@@ -56,16 +55,5 @@ app.use('/api/v1', routesApi);
 app.use(errorHandler);
 app.use(unauthorized);
 
-/** 
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page with error.jade
-  res.status(err.status || 500);
-  res.render('error');
-});
-*/
 
 module.exports = app;
