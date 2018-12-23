@@ -28,6 +28,7 @@ const getFoodTrivia = (req, res, next) => {
       console.error(response.error);
       return next(err);
     }
+    console.log(response.body);
     res.locals.trivia = response.body;
     next();
     console.log(response.status, response.headers, response.body);
