@@ -35,4 +35,6 @@ const getFoodTrivia = (req, res, next) => {
   });
 }
 
+console.log('Just after getFoodTrivia');
+
 export default getFoodTrivia;
