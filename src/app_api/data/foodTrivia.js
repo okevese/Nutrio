@@ -7,7 +7,9 @@ const endpoint = config.spoonacular_api.endpoints.trivia;
 const secret = config.food_api_secret;
 
 console.log(host);
+console.log('before secret');
 console.log(secret);
+console.log('after secret');
 console.log(endpoint);
 
 
