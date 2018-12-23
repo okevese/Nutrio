@@ -12,7 +12,7 @@ console.log(secret);
 console.log('after secret');
 console.log(endpoint);
 
-
+console.log('Just before getFoodTrivia');
 const getFoodTrivia = (req, res, next) => {
   const url = host + endpoint;
   console.log(url);
