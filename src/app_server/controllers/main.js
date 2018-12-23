@@ -59,6 +59,7 @@ const foodTrivia = (req, res) => {
  * @param {object} responseBody Response from call to `api/v1/trivia`
  */
 const renderHome = (req, res, responseBody) => {
+  console.log(responseBody);
   res.render('home', { 
     title: 'Nutrio',
     trivia: responseBody.text
