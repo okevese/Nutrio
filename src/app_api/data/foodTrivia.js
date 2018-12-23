@@ -15,7 +15,7 @@ console.log(endpoint);
 
 const getFoodTrivia = (req, res, next) => {
   const url = host + endpoint;
-
+  console.log(url);
   unirest.get(url)
   .header("X-Mashape-Key", secret)
   .header("Accept", "application/json")
