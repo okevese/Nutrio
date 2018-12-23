@@ -49,6 +49,7 @@ const foodTrivia = (req, res) => {
   };
   request(requestOptions, (err, response, body) => {
     //if (err) return next(err);
+    console.log(body);
     renderHome(req, res, body);
   });
 }
