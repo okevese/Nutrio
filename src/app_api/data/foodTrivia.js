@@ -6,6 +6,10 @@ const host = config.spoonacular_api.hostname;
 const endpoint = config.spoonacular_api.endpoints.trivia;
 const secret = config.food_api_secret;
 
+console.log(host);
+console.log(secret);
+console.log(endpoint);
+
 
 const getFoodTrivia = (req, res, next) => {
   const url = host + endpoint;
