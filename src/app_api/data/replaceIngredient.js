@@ -35,7 +35,6 @@ const getReplaceIngredient =  (req, res, next) => {
     
     res.locals.ingredient = response.body;
     next();
-    console.log(response.status, response.headers, response.body);
   });
 };
 

@@ -31,7 +31,6 @@ const getVisualRecipeNutrition = () => {
       }
       res.locals.visualNutrition = response.body;
       next();
-      console.log(response.status, response.headers, response.body);
     });
   }
 }

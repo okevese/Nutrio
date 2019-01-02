@@ -8,9 +8,9 @@ const secret = config.food_api_secret;
 
 
 
-console.log('Just before getFoodTrivia');
 const getFoodTrivia = (req, res, next) => {
   const url = host + endpoint;
+  console.log("In data: getFoodTrivia");
   
   unirest.get(url)
   .header("X-Mashape-Key", secret)
@@ -26,10 +26,8 @@ const getFoodTrivia = (req, res, next) => {
     }
     res.locals.trivia = response.body;
     next();
-    console.log(response.status, response.headers, response.body);
+    //console.log(response.status, response.headers, response.body);
   });
 }
-
-console.log('Just after getFoodTrivia');
 
 export default getFoodTrivia;

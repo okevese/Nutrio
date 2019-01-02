@@ -27,7 +27,6 @@ const getQuickAnswer = (req, res, next) => {
       err.status = response.status;
       return next(err);
     }
-    console.log(response.status, response.headers, response.body);
     res.locals.answer = response.body;
     next();
   });

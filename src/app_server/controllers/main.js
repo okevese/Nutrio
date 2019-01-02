@@ -21,7 +21,6 @@ const foodJoke = (req, res) => {
     json: {}
   };
   request(requestOptions, (err, response, body) => {
-    console.log(body);
     //if (err) return next(err);
     renderJoke(req, res, body);
   });
@@ -49,7 +48,6 @@ const foodTrivia = (req, res) => {
   };
   request(requestOptions, (err, response, body) => {
     //if (err) return next(err);
-    console.log(body);
     renderHome(req, res, body);
   });
 }
@@ -60,7 +58,6 @@ const foodTrivia = (req, res) => {
  * @param {object} responseBody Response from call to `api/v1/trivia`
  */
 const renderHome = (req, res, responseBody) => {
-  console.log(responseBody);
   res.render('home', { 
     title: 'Nutrio',
     trivia: responseBody.text
@@ -100,7 +97,7 @@ const mealPlan = (req, res) => {
  */
 
 const renderMealPlan = (req, res, responseBody) => {
-  console.log(responseBody.mealPlan.meals[0].id);
+  //console.log(responseBody.mealPlan.meals[0].id);
   let message;
   if (!(responseBody.mealPlan.meals instanceof Array)) {
     message = "API lookup error";

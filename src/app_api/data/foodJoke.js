@@ -21,7 +21,6 @@ const getFoodJoke = (req, res, next) => {
       console.error(response.error);
       return next(err);
     }
-    // console.log(response.status, response.headers, response.body);
     res.locals.joke = response.body;
     next();
   });
