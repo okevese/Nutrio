@@ -211,6 +211,37 @@ const renderRecipeDailyCalorie = (req, res, responseBody) => {
   });
 }
 
+
+/**
+ * 
+ * @var {object} ingredientName  The name of the ingredient to be replaced
+ */
+const replaceIngredient = (req, res) => {
+  const path = '/api/v1/replace_ingredient';
+  const requestOptions = {
+    url: apiOptions.server + path,
+    method: "GET",
+    json: {},
+    qs: {
+      ingredientName: req.query.ingredientName
+    }
+  };
+  request(requestOptions, (err, response, body) => {
+    renderReplaceIngredient(req, res, body);
+  });
+}
+
+
+const renderReplaceIngredient = (req, res, responseBody) => {
+  res.render('replace_ingredient', {
+    title: 'Replace Ingredient',
+    pageHeader: {
+      title: 'Replace an Ingredient',
+      strapline: 'Enter an ingredient to find it\'s nearest alternative'
+    }
+  });
+}
+
 const about = (req, res) => {
   res.render('about', { title: 'About page' });
 }
@@ -221,5 +252,6 @@ export {
   mealPlan,
   recipeDailyCalorie,
   recipeInstructions,
+  replaceIngredient,
   about
 };
