@@ -10,15 +10,14 @@ const secret = config.food_api_secret;
 
 const getFoodTrivia = (req, res, next) => {
   const url = host + endpoint;
-  console.log("In data: getFoodTrivia");
   
   unirest.get(url)
   .header("X-Mashape-Key", secret)
   .header("Accept", "application/json")
-  .end(function (response) {
+  .end(response => {
     if(response.error) {
       let err = new Error('A problem occured.');
-
+      
       // `error` and `status` are properties of the unirest response object
       err.status = response.status;
       console.error(response.error);
@@ -26,7 +25,6 @@ const getFoodTrivia = (req, res, next) => {
     }
     res.locals.trivia = response.body;
     next();
-    //console.log(response.status, response.headers, response.body);
   });
 }
 
