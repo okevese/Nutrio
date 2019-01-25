@@ -60,7 +60,6 @@ const foodTrivia = (req, res) => {
 const renderHome = (req, res, responseBody) => {
   res.render('home', { 
     title: 'Nutrio',
-    trivia: responseBody.text
   });
 }
 

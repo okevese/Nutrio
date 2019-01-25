@@ -3,12 +3,12 @@ extends layout
 block content
   #banner.page-header
   .row
-    .col-lg-6
+    .col-lg-6(ng-controller="TriviaCtrl")
     h1
       br
       p.text-center #{title}
       p.text-center
-        small #{trivia}
+        small {{trivia}}
     
   
           
