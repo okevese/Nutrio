@@ -1,5 +1,9 @@
-var nutrioApp = angular.module('nutrioApp', []);
+angular.module('nutrioApp', []);
 
-nutrioApp.controller('TriviaCtrl', ['$scope', function($scope) {
-  $scope.trivia = 'Some trivia about nutrition';
-}]);
+var triviaCtrl = function($scope) {
+  $scope.trivia = "Something smartass about nutrition";
+}
+
+angular
+  .module('nutrioApp')
+  .controller('TriviaCtrl', triviaCtrl);
