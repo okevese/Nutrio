@@ -2,7 +2,7 @@ import express from 'express';
 const router = express.Router();
 import { 
   foodJoke,
-  foodTrivia,
+  renderHome,
   mealPlan,
   recipeDailyCalorie,
   replaceIngredient,
@@ -10,7 +10,7 @@ import {
   recipeInstructions
 } from '../controllers/main';
 
-router.get('/', foodTrivia);
+router.get('/', renderHome);
 router.get('/joke', foodJoke);
 router.get('/meals', mealPlan);
 router.get('/daily_calorie', recipeDailyCalorie);

@@ -38,7 +38,7 @@ const renderJoke = (req, res, responseBody) => {
  * @var {string} path URI for the GET meals endpoint
  * @var {object} requestOptions Defines the request
  */
-
+/** 
 const foodTrivia = (req, res) => {
   const path = '/api/v1/trivia';
   const requestOptions = {
@@ -50,14 +50,14 @@ const foodTrivia = (req, res) => {
     if (err) return next(err);
     renderHome(req, res, body);
   });
-}
+}*/
 
 
 /**
  * To separate the controller for rendering the view from the call to the API
  * @param {object} responseBody Response from call to `api/v1/trivia`
  */
-const renderHome = (req, res, responseBody) => {
+const renderHome = (req, res) => {
   res.render('home', { 
     title: 'Nutrio',
   });
@@ -247,7 +247,7 @@ const about = (req, res) => {
 
 export { 
   foodJoke,
-  foodTrivia,
+  renderHome,
   mealPlan,
   recipeDailyCalorie,
   recipeInstructions,
