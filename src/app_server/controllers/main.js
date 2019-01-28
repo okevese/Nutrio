@@ -222,6 +222,10 @@ const about = (req, res) => {
   res.render('about', { title: 'About page' });
 }
 
+const angularApp = (req, res) => {
+  res.render('layout', { title: 'Nutrio'});  
+}
+
 export { 
   foodJoke,
   renderHome,
@@ -229,5 +233,6 @@ export {
   recipeDailyCalorie,
   recipeInstructions,
   replaceIngredient,
-  about
+  about,
+  angularApp
 };

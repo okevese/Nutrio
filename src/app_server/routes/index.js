@@ -7,10 +7,11 @@ import {
   recipeDailyCalorie,
   replaceIngredient,
   about, 
-  recipeInstructions
+  recipeInstructions,
+  angularApp
 } from '../controllers/main';
 
-router.get('/', renderHome);
+router.get('/', angularApp);
 router.get('/joke', foodJoke);
 router.get('/meals', mealPlan);
 router.get('/daily_calorie', recipeDailyCalorie);
