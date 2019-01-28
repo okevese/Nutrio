@@ -2,7 +2,6 @@ import express from 'express';
 const router = express.Router();
 import { 
   foodJoke,
-  renderHome,
   mealPlan,
   recipeDailyCalorie,
   replaceIngredient,

@@ -29,18 +29,6 @@ const renderJoke = (req, res, responseBody) => {
 }
 
 
-
-/**
- * To separate the controller for rendering the view from the call to the API
- * @param {object} responseBody Response from call to `api/v1/trivia`
- */
-const renderHome = (req, res) => {
-  res.render('home', { 
-    title: 'Nutrio',
-  });
-}
-
-
 /**
  *  Call to the API then passes the response to renderMealPlan function
  * @var {string} path URI for the GET meals endpoint
@@ -228,7 +216,6 @@ const angularApp = (req, res) => {
 
 export { 
   foodJoke,
-  renderHome,
   mealPlan,
   recipeDailyCalorie,
   recipeInstructions,
