@@ -4,8 +4,6 @@ const apiOptions = {
   server: "http://localhost:5000"
 }; 
 
-// TODO: Set up error views page
-
 
 /**
  *  Call to the API then passes the response to renderHome function
@@ -30,27 +28,6 @@ const renderJoke = (req, res, responseBody) => {
   res.render('home', { title: 'Home' });
 }
 
-
-
-
-/**
- *  Call to the API then passes the response to renderHome function
- * @var {string} path URI for the GET meals endpoint
- * @var {object} requestOptions Defines the request
- */
-/** 
-const foodTrivia = (req, res) => {
-  const path = '/api/v1/trivia';
-  const requestOptions = {
-    url: apiOptions.server + path,
-    method: "GET",
-    json: {}
-  };
-  request(requestOptions, (err, response, body) => {
-    if (err) return next(err);
-    renderHome(req, res, body);
-  });
-}*/
 
 
 /**
