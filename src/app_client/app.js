@@ -7,6 +7,11 @@ function config($routeProvider) {
       controller: 'homeCtrl',
       controllerAs: 'vm'
     })
+    .when('/meals', {
+      templateUrl: '/meal_plan/meal.view.html',
+      controller: 'mealPlanCtrl',
+      controllerAs: 'vm'
+    })
     .otherwise({redirectTo: '/'});
 }
 
