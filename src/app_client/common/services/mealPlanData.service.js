@@ -1,4 +1,6 @@
 (function() {
+
+  mealPlanData.$inject = ['$http'];
   var mealPlanData = function($http) {
     return $http({
       method: "GET",

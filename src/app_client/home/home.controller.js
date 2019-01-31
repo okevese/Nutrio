@@ -2,7 +2,8 @@
   angular
     .module('nutrioApp')
     .controller('homeCtrl', homeCtrl);
-
+  
+  homeCtrl.$inject = ['triviaData'];  
   function homeCtrl (triviaData) {
     var vm = this;
     vm.pageHeader = {

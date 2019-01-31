@@ -1,5 +1,6 @@
 (function() {
-
+  
+  triviaData.$inject = ['$http'];
   var triviaData = function($http) {
     return $http.get('/api/v1/trivia');
   }
