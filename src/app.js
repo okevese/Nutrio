@@ -5,6 +5,8 @@ import logger from 'morgan';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
+import uglifyJs from 'uglify-js';
+import fs from 'fs';
 import helmet from 'helmet';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from '../swagger.json';
@@ -23,6 +25,19 @@ const app = express();
 
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'pug');
+const appClientFiles = [
+  'app_client/app.js',
+  'app_client/home/home.controller.js',
+  'app_client/meal_plan/meal.controller.js',
+  'app_client/common/services/triviaData.service.js',
+  'app_client/common/services/mealPlanData.service.js'
+];
+const uglified = uglifyJs.minify(appClientFiles, { compress: false });
+
+fs.writeFile('public/angular/nutrio.min.js', uglified.code, function(err) {
+  if (err) console.log(err);
+  else console.log('Script generated and saved: nutrio.min.js');
+});
 
 // disable browser caching. 
 app.use(helmet.noCache());

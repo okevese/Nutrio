@@ -38,6 +38,7 @@
     "request": "^2.88.0",
     "serve-favicon": "~2.4.5",
     "swagger-ui-express": "^2.0.15",
+    "uglify-js": "^3.4.9",
     "unirest": "^0.5.1",
     "winston": "^2.4.0"
   },
