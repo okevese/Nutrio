@@ -34,7 +34,7 @@ const appClientFiles = [
 ];
 const uglified = uglifyJs.minify(appClientFiles, { compress: false });
 
-fs.writeFile('public/angular/nutrio.min.js', uglified.code, function(err) {
+fs.writeFile('src/public/angular/nutrio.min.js', uglified.code, function(err) {
   if (err) console.log(err);
   else console.log('Script generated and saved: nutrio.min.js');
 });
