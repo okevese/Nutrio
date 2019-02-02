@@ -25,14 +25,20 @@ const app = express();
 
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'pug');
-const appClientFiles = [
+
+let appClientFiles = [
   'app_client/app.js',
   'app_client/home/home.controller.js',
   'app_client/meal_plan/meal.controller.js',
   'app_client/common/services/triviaData.service.js',
   'app_client/common/services/mealPlanData.service.js'
 ];
-const uglified = uglifyJs.minify(appClientFiles, { compress: false });
+
+let contents = appClientFiles.map(function(file) {
+  return fs.readFileSync(file, 'utf8');
+});
+
+const uglified = uglifyJs.minify(contents);
 
 fs.writeFile('src/public/angular/nutrio.min.js', uglified.code, function(err) {
   if (err) console.log(err);
