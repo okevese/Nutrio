@@ -1,9 +1,8 @@
 (function() {
-  angular
-    .module('nutrioApp')
-    .controller('mealPlanCtrl', mealPlanCtrl);
+  //angular
+    //.module('nutrioApp')
+    //.controller('mealPlanCtrl', mealPlanCtrl);
 
-  mealPlanCtrl.$inject = ['mealPlanData'];
   function mealPlanCtrl(mealPlanData) {
     var vm = this;
     vm.pageHeader = {
@@ -19,4 +18,5 @@
         console.log(e);
       })
   }  
+  mealPlanCtrl.$inject = ['mealPlanData'];
 })();

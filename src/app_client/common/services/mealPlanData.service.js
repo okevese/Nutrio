@@ -1,6 +1,5 @@
 (function() {
 
-  mealPlanData.$inject = ['$http', 'data'];
   function mealPlanData($http, data) {
     return $http({
       method: "GET",
@@ -8,9 +7,10 @@
       params: data
     })
   }
+  mealPlanData.$inject = ['$http', 'data'];
 
-  angular
-    .module('nutrioApp')
-    .service('mealPlanData', mealPlanData);
+  //angular
+    //.module('nutrioApp')
+    //.service('mealPlanData', mealPlanData);
   
 })();

@@ -2,8 +2,8 @@
   angular
     .module('nutrioApp')
     .controller('homeCtrl', homeCtrl);
-  
-  homeCtrl.$inject = ['triviaData'];  
+
+  homeCtrl.$inject = ['triviaData'];
   function homeCtrl (triviaData) {
     var vm = this;
     vm.pageHeader = {
@@ -20,4 +20,5 @@
         console.log(e);
       });
   }
+  
 })();
