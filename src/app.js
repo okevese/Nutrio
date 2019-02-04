@@ -27,15 +27,15 @@ app.set('views', path.join(__dirname, 'app_server', 'views'));
 app.set('view engine', 'pug');
 
 let appClientFiles = [
-  'app_client/app.js',
-  'app_client/home/home.controller.js',
-  'app_client/meal_plan/meal.controller.js',
-  'app_client/common/services/triviaData.service.js',
-  'app_client/common/services/mealPlanData.service.js'
+  'app.js',
+  'home/home.controller.js',
+  'meal_plan/meal.controller.js',
+  'common/services/triviaData.service.js',
+  'common/services/mealPlanData.service.js'
 ];
 
 let contents = appClientFiles.map(function(file) {
-  return fs.readFileSync(file, 'utf8');
+  return fs.readFileSync(path.join('src', 'app_client', file), 'utf8');
 });
 
 const uglified = uglifyJs.minify(contents);
