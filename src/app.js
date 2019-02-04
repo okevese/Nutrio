@@ -16,7 +16,7 @@ import './app_api/models/db';
 import './app_api/models/User';
 import './app_api/auth/passport';
 
-import routes from './app_server/routes/index';
+// import routes from './app_server/routes/index';
 import routesApi  from './app_api/routes/index';
 import errorHandler from './app_api/middleware/errorHandlers/genericErrorHandler.js';
 import unauthorized from './app_api/middleware/errorHandlers/unauthorized';
@@ -31,7 +31,8 @@ let appClientFiles = [
   'home/home.controller.js',
   'meal_plan/meal.controller.js',
   'common/services/triviaData.service.js',
-  'common/services/mealPlanData.service.js'
+  'common/services/mealPlanData.service.js',
+  'common/directives/footerGeneric/footerGeneric.directive.js'
 ];
 
 let contents = appClientFiles.map(function(file) {
@@ -72,8 +73,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'app_client')));
 
-app.use('/', routes);
+// app.use('/', routes);
 app.use('/api/v1', routesApi);
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
+});
 app.use(errorHandler);
 app.use(unauthorized);
 
