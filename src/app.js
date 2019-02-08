@@ -32,7 +32,8 @@ let appClientFiles = [
   'meal_plan/meal.controller.js',
   'common/services/triviaData.service.js',
   'common/services/mealPlanData.service.js',
-  'common/directives/footerGeneric/footerGeneric.directive.js'
+  'common/directives/footerGeneric/footerGeneric.directive.js',
+  'common/directives/navigation/navigation.directive.js'
 ];
 
 let contents = appClientFiles.map(function(file) {
