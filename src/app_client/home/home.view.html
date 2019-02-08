@@ -1,16 +1,16 @@
-<div class="page-header" id="banner"></div>
-<div class="row" ng-controller="homeCtrl">
-  <div class="col-lg-6"></div>
-  <h1><br />
-    {{ vm.pageHeader.title }}
-    <small>{{ vm.pageHeader.strapline }}</small>
-  </h1>
-  <h1>
-    <p class="text-center">
-      <small>{{ vm.message }}</small>
-    </p>
-    <p class="text-center">
-      <small> {{ vm.trivia }} </small>
-    </p>
-  </h1>  
+<navigation></navigation>
+
+<div class="container">
+  <page-header content="vm.pageHeader"></page-header>
+  <div class="row" ng-controller="homeCtrl">
+    <h1>
+      <p class="text-center">
+        <small>{{ vm.message }}</small>
+      </p>
+      <p class="text-center">
+        <small>{{ vm.trivia }}</small>
+      </p>
+    </h1>
+  </div>
+  <footer-generic></footer-generic>
 </div>
