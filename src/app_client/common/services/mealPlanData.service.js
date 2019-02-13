@@ -1,13 +1,20 @@
 (function() {
 
-  function mealPlanData($http, data) {
-    return $http({
-      method: "GET",
-      url: '/api/v1/meal_plan',
-      params: data
-    })
+  function mealPlanData($http) {
+    var meals = function() {
+      return $http({
+        method: "GET",
+        url: '/api/v1/meal_plan'
+      })
+    };
+
+    var mealParams = function(url) {
+      var urlObject = $location.search();
+      return urlObject;
+    }
+    return meals;
   }
-  mealPlanData.$inject = ['$http', 'data'];
+  mealPlanData.$inject = ['$http'];
 
   angular
     .module('nutrioApp')
