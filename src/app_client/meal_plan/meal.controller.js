@@ -13,6 +13,7 @@
     vm.message = "Loading meal plan...";
     mealPlanData
       .then(function(meals) {
+        console.log(meals);
         if(meals.mealPlan.meals[0].id) vm.message = "";
         vm.meals = meals.mealPlan;
       }, function(e) {
