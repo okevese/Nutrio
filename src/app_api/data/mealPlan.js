@@ -32,7 +32,6 @@ const getMealPlan = (req, res, next) => {
       console.error(response.error);
       return next(err);
     }
-    console.log(response.body);
     res.locals.mealPlan = response.body;
     next();
   });

@@ -10,12 +10,14 @@
       title: 'Meal Plan',
       strapline: 'Generate a meal plan with three meals per day!'
     };
+
     vm.message = "Loading meal plan...";
     mealPlanData
       .then(function(meals) {
-        console.log(meals);
-        if(meals.mealPlan.meals[0].id) vm.message = "";
-        vm.meals = meals.mealPlan;
+        console.log(meals.data.mealPlan.nutrients);
+        if(meals.data.mealPlan._id) vm.message = "";
+        vm.meals = meals.data.mealPlan.meals;
+        vm.nutrients = meals.data.mealPlan.nutrients;
       }, function(e) {
         console.log(e);
       })
