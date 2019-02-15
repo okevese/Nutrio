@@ -14,7 +14,7 @@
     vm.message = "Loading meal plan...";
     mealPlanData
       .then(function(meals) {
-        console.log(meals.data.mealPlan.nutrients);
+        console.log(meals.data.mealPlan.meals);
         if(meals.data.mealPlan._id) vm.message = "";
         vm.meals = meals.data.mealPlan.meals;
         vm.nutrients = meals.data.mealPlan.nutrients;

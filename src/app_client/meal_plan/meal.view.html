@@ -10,7 +10,61 @@
         </p>
       </h1>
       <div class="row list-group">
+        <div ng-repeat="meal in vm.meals">
+          <div class="col-xs-12 list-group-item">
+            <h4>
+              {{ meal.title }}
+              <span class="badge pull-right badge-default">{{ meal.readyInMinutes }} min</span>
+            </h4>
+            <p>{{ meal.servings }} servings</p>
+          </div>
+        </div>  
+      </div>
+    </div>
 
+    <div class="col-xs-12 col-sm-6">
+      <form class="form-horizontal" action="#" method="get" role="form">
+        <div class="form-group">
+          <p>
+            <label class="col-xs-10 col-sm-2 control-label" for="diet">Diet</label>
+          </p>
+          <div class="col-xs-12 col-sm-10">
+            <input class="form-control" id="diet" name="diet" />
+          </div>
+        </div>
+        <div class="form-group">
+          <p>
+            <label class="col-xs-10 col-sm-2 control-label" for="exclude">Exclude</label>
+          </p>
+          <div class="col-xs-12 col-sm-10">
+            <input class="form-control" id="exclude" name="exclude" />
+          </div>
+        </div>
+        <div class="form-group">
+          <p>
+            <label class="col-xs-10 col-sm-2 control-label" for="calories">Calorie Target</label>
+          </p>
+          <div class="col-xs-12 col-sm-10">
+            <input class="form-control" id="calories" name="calories" />
+          </div>
+        </div>
+        <button class="btn btn-default pull-right">Get daily meal plan</button>
+      </form>
+    </div>
+  </div>
+  <!-- Nutrient composition -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h2 class="panel-title">Nutrients</h2>
+        </div>
+        <div class="panel-body">
+          <p>Calories: {{ vm.nutrients.calories }}</p>
+          <p>Protein: {{ vm.nutrients.protein }}</p>
+          <p>Fat: {{ vm.nutrients.fat }}</p>
+          <p>Carbohydrates: {{ vm.nutrients.carbohydrates }}</p>
+        </div>
       </div>
     </div>
   </div>
