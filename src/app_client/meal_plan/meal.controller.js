@@ -13,7 +13,7 @@
 
     vm.mealParams = {
       diet: 'vegetarian',
-      exclude: 'shellfish, olives',
+      exclude: 'shellfish',
       targetCalories: 2000,
       timeFrame: 'day'
     };
