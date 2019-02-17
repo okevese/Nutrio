@@ -33,12 +33,10 @@
     }
 
     vm.getDailyMealPlan = function(mealParams) {
-      console.log(mealParams);
       vm.message = "Loading meal plan...";
 
       mealPlanData.getMeals(mealParams)
         .then(function(meals) {
-          console.log(meals.data.mealPlan.meals);
           if(meals.data.mealPlan._id) vm.message = "";
           vm.meals = meals.data.mealPlan.meals;
           vm.nutrients = meals.data.mealPlan.nutrients;
