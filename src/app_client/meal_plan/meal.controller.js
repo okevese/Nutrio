@@ -12,21 +12,37 @@
     };
 
     vm.mealParams = {
-      diet: 'vegetarian',
-      exclude: 'shellfish, olives',
-      targetCalories: 2000,
       timeFrame: 'day'
     };
 
-    vm.message = "Loading meal plan...";
-    mealPlanData.getMeals(vm.mealParams)
-      .then(function(meals) {
-        console.log(meals.data.mealPlan.meals);
-        if(meals.data.mealPlan._id) vm.message = "";
-        vm.meals = meals.data.mealPlan.meals;
-        vm.nutrients = meals.data.mealPlan.nutrients;
-      }, function(e) {
-        console.log(e);
-      })
+    // Initializes ng-show directive for form validation of diet and calories fields
+    vm.dietInvalid = false;
+    vm.targetCaloriesInvalid = false;
+
+    vm.onSubmit = function() {
+      // Sets the values of both ng-show directives if the form is invalid,i.e empty fields
+      if(!vm.mealForm.diet.$valid) {
+        vm.dietInvalid = true;
+      }
+      if(!vm.mealForm.calories.$valid) {
+        vm.targetCaloriesInvalid = true;
+      }
+      if(vm.mealForm.$valid) {
+        vm.getDailyMealPlan(vm.mealParams);
+      }
+    }
+
+    vm.getDailyMealPlan = function(mealParams) {
+      vm.message = "Loading meal plan...";
+
+      mealPlanData.getMeals(mealParams)
+        .then(function(meals) {
+          if(meals.data.mealPlan._id) vm.message = "";
+          vm.meals = meals.data.mealPlan.meals;
+          vm.nutrients = meals.data.mealPlan.nutrients;
+        }, function(e) {
+          console.log(e);
+        })
+    }    
   }  
 })();
