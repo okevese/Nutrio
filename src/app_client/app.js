@@ -13,6 +13,11 @@
         controller: 'mealPlanCtrl',
         controllerAs: 'vm'
       })
+      .when('/daily_calorie', {
+        templateUrl: '/daily_calorie/calorie.view.html',
+        controller: 'dailyCalorieCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true); 
   }

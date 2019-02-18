@@ -30,6 +30,7 @@ let appClientFiles = [
   'app.js',
   'home/home.controller.js',
   'meal_plan/meal.controller.js',
+  'daily_calorie/calorie.controller.js',
   'common/services/triviaData.service.js',
   'common/services/mealPlanData.service.js',
   'common/directives/footerGeneric/footerGeneric.directive.js',
