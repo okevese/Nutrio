@@ -1,4 +1,8 @@
 (function() {
+  angular
+    .module('nutrioApp')
+    .service('dailyCalorieData', dailyCalorieData);
+    
   dailyCalorieData.$inject = ['$http'];
 
   function dailyCalorieData($http) {
@@ -14,7 +18,4 @@
     };
   }
 
-  angular
-    .module('nutrioApp')
-    .service('dailyCalorieData', dailyCalorieData);
 })();

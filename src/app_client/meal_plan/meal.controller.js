@@ -3,7 +3,7 @@
     .module('nutrioApp')
     .controller('mealPlanCtrl', mealPlanCtrl);
 
-    mealPlanCtrl.$inject = ['mealPlanData'];  
+  mealPlanCtrl.$inject = ['mealPlanData'];  
   function mealPlanCtrl(mealPlanData) {
     var vm = this;
     vm.pageHeader = {

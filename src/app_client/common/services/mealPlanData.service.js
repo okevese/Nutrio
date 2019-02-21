@@ -1,4 +1,7 @@
 (function() {
+  angular
+    .module('nutrioApp')
+    .service('mealPlanData', mealPlanData);
 
   mealPlanData.$inject = ['$http'];
 
@@ -14,9 +17,5 @@
       getMeals: getMeals
     };
   }
-  
-  angular
-    .module('nutrioApp')
-    .service('mealPlanData', mealPlanData);
   
 })();

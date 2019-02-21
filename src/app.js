@@ -33,6 +33,7 @@ let appClientFiles = [
   'daily_calorie/calorie.controller.js',
   'common/services/triviaData.service.js',
   'common/services/mealPlanData.service.js',
+  'common/services/dailyCalorieData.service.js',
   'common/directives/footerGeneric/footerGeneric.directive.js',
   'common/directives/navigation/navigation.directive.js',
   'common/directives/pageHeader/pageHeader.directive.js'
