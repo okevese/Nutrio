@@ -41,6 +41,7 @@
           vm.meals = meals.data.mealPlan.meals;
           vm.nutrients = meals.data.mealPlan.nutrients;
         }, function(e) {
+          vm.message = "Error while loading meals";
           console.log(e);
         })
     }    
