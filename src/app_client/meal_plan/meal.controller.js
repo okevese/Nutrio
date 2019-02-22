@@ -28,11 +28,11 @@
         vm.targetCaloriesInvalid = true;
       }
       if(vm.mealForm.$valid) {
-        vm.getDailyMealPlan(vm.mealParams);
+        vm.displayDailyMealPlan(vm.mealParams);
       }
     }
 
-    vm.getDailyMealPlan = function(mealParams) {
+    vm.displayDailyMealPlan = function(mealParams) {
       vm.message = "Loading meal plan...";
 
       mealPlanData.getMeals(mealParams)

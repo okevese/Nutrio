@@ -12,21 +12,34 @@
     };
 
     vm.calorieParams = {
-      targetCalories: 2000,
       timeFrame: 'day'
     };
 
-    vm.message = "Loading daily calorie recipes...";
+    // Initializes ng-show directive for form validation
+    vm.targetCaloriesInvalid = false;
 
-    dailyCalorieData.getDailyCalorie(vm.calorieParams)
-      .then(function(meals) {
-        if(meals.data.recipeDailyCalorie.meals[0].id) vm.message = "";
-        console.log(meals);
-        vm.meals = meals.data.recipeDailyCalorie.meals;
-      }, function(e) {
-        console.log(e);
-      })
+    vm.onSubmit = function() {
+      if(!vm.mealForm.calories.$valid) {
+        vm.targetCaloriesInvalid = true;
+      }
 
-    
+      if(vm.mealForm.$valid) {
+        vm.displayRecipeDailyCalorie(vm.calorieParams);
+      }
+    }
+
+    vm.displayRecipeDailyCalorie = function(calorieParams) {
+      vm.message = "Loading daily calorie recipes...";
+
+      dailyCalorieData.getDailyCalorie(vm.calorieParams)
+        .then(function(meals) {
+          if(meals.data.recipeDailyCalorie.meals[0].id) vm.message = "";
+          console.log(meals);
+          vm.meals = meals.data.recipeDailyCalorie.meals;
+          vm.nutrients = meals.data.recipeDailyCalorie.nutrients;
+        }, function(e) {
+          console.log(e);
+        })
+    }
   }  
 })();
