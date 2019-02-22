@@ -2,7 +2,7 @@
 
 <div class="container">
   <page-header content="vm.pageHeader"></page-header>
-  <div class="row" ng-controller="mealPlanCtrl">
+  <div class="row" ng-controller="dailyCalorieCtrl">
     <div class="col-xs-12 col-sm-6">
       <h1>
         <p class="text-center">
@@ -10,7 +10,7 @@
         </p>
       </h1>
     </div>
-  </div>      
+  </div>
 
   <div class="row">
     <div class="col-xs-12 col-sm-6">
@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-  
+
     <!-- Nutrient composition -->
     <div class="col-xs-12 col-sm-6">
       <div class="panel panel-primary">
@@ -44,38 +44,24 @@
     </div>
 
     <div class="col-xs-12 col-sm-6 pull-right">
-      <h3>Narrow your search...</h3>
       <form class="form-horizontal" name="vm.mealForm" ng-submit="vm.onSubmit()" role="form" novalidate>
-        <div class="form-group">
-          <p>
-            <label class="col-xs-10 col-sm-2 control-label" for="diet">Diet</label>
-          </p>
-          <div class="col-xs-12 col-sm-10">
-            <input type="text" class="form-control" id="diet" ng-model="vm.mealParams.diet" name="diet" required/>
-            <span ng-show="vm.dietInvalid">Please enter a value for diet</span>
-          </div>
-        </div>
-        <div class="form-group">
-          <p>
-            <label class="col-xs-10 col-sm-2 control-label" for="exclude">Exclude</label>
-          </p>
-          <div class="col-xs-12 col-sm-10">
-            <input type="text" class="form-control" id="exclude" ng-model="vm.mealParams.exclude" name="exclude" />
-          </div>
-        </div>
         <div class="form-group">
           <p>
             <label class="col-xs-10 col-sm-2 control-label" for="calories">Calorie Target</label>
           </p>
           <div class="col-xs-12 col-sm-10">
-            <input type="text" class="form-control" id="calories" ng-model="vm.mealParams.targetCalories" name="calories" required/>
-            <span ng-show="vm.targetCaloriesInvalid"> Please enter a value for target calories</span>
+            <input type="text" class="form-control" id="calories" ng-model="vm.calorieParams.targetCalories" name="calories" required/>
+            <span ng-show="vm.targetCaloriesInvalid"> Please enter a value for calorie target</span>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary pull-right">Get daily meal plan</button>
+        <button type="submit" class="btn btn-primary pull-right">Get daily Meal Plan</button>
       </form>
     </div>
-  </div>  
-
+  </div>
+    
+  
   <footer-generic></footer-generic>
-</div>
+
+</div>    
+
+    
