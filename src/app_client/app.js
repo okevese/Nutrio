@@ -18,6 +18,11 @@
         controller: 'dailyCalorieCtrl',
         controllerAs: 'vm'
       })
+      .when('/replace_ingredient', {
+        templateUrl: '/replace_ingredient/ingredient.view.html',
+        controller: 'replaceIngredientCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true); 
   }
