@@ -10,9 +10,16 @@
       title: "Replace Ingredients",
       strapline: "Find a similar ingredients"
     };
-
+    
     vm.ingredient = {
-
+      ingredientName: 'apple'
     };
+
+    replaceIngredientData(vm.ingredient)
+      .then(function(ingredient) {
+        console.log(ingredient);
+      }, function(e) {
+        console.log(e);
+      })
   }  
 })();
