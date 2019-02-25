@@ -1,6 +1,24 @@
 <navigation></navigation>
 
 <div class="container">
-  
+  <page-header content="vm.pageHeader"></page-header>
+  <div class="row" ng-controller="replaceIngredientCtrl">
+    <div class="col-xs-12 col-sm-6">
+      <h1>
+        <p class="text-center">
+          <small> {{ vm.message }}</small>
+        </p>
+      </h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-10">
+      <form class="well form-search" style="background-color: #3cb9c6; border: 1px solid #32a1ac; background-image: none; border-color: transparent;">
+        <input type="text" />
+        <button type="submit" class="btn btn-primary">Replace</button>
+      </form>
+    </div>
+  </div>
   <footer-generic></footer-generic>
 </div>
