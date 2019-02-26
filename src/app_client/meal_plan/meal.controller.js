@@ -11,6 +11,12 @@
       strapline: 'Generate a meal plan with three meals per day!'
     };
 
+    vm.styleMealplanInput = {
+      "background-color": "#3cb9c6",
+      "border-color": "transparent", 
+      "border-radius": "10px"
+    };
+
     vm.mealParams = {
       timeFrame: 'day'
     };
