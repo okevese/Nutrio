@@ -15,7 +15,17 @@
       "background-color": "#3cb9c6",
       "border": "1px solid #32a1ac", 
       "background-image": "none",
-      "border-color": "transparent"
+      "border-color": "transparent",
+      "vertical-align": "middle",
+      "line-height": "30px",
+      "font-size": "18px",
+    };
+    vm.styleInputField = {
+      "border-radius": "15px",
+      "background-color": "#fff",
+      "border": "1px solid transparent",
+      "width": "800px",
+      "font-weight": "normal",
     };
     
     vm.ingredient = {
