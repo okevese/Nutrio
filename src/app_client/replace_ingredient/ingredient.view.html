@@ -11,14 +11,17 @@
       </h1>
     </div>
   </div>
-
+  
   <div class="row">
     <div class="col-xs-12 col-sm-10">
-      <form class="well form-search" ng-style="vm.styleIngredientInput">
-        <input type="text" class="input-medium search-query" ng-style="vm.styleInputField"/>
-        <button type="submit" class="btn btn-primary">Replace</button>
-      </form>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search&hellip;">
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-primary">Go</button>
+        </span>
+      </div>
     </div>
   </div>
+  
   <footer-generic></footer-generic>
 </div>
