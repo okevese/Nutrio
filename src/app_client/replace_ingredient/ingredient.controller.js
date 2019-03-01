@@ -11,15 +11,25 @@
       strapline: "Find a similar ingredients"
     };
 
-    vm.ingredient = {
-      ingredientName: 'apple'
-    };
+    vm.ingredient = { };
 
-    replaceIngredientData(vm.ingredient)
-      .then(function(ingredient) {
-        console.log(ingredient);
-      }, function(e) {
-        console.log(e);
-      })
+    vm.ingredientInvalid = false;
+
+    vm.onSubmit = function() {
+      console.log('in submit')
+      
+  
+      vm.displayReplaceIngredient(vm.ingredient);
+      
+    }
+
+    vm.displayReplaceIngredient = function(ingredient) {
+      replaceIngredientData(vm.ingredient)
+        .then(function(ingredient) {
+          console.log(ingredient);
+        }, function(e) {
+          console.log(e);
+        })
+    }
   }  
 })();
