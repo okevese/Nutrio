@@ -1,7 +1,8 @@
 <navigation></navigation>
 
 <div class="container">
-  <page-header content="vm.pageHeader"></page-header>
+  <page-header content="vm.pageHeader"></page-header>      
+
   <div class="row" ng-controller="mealPlanCtrl">
     <div class="col-xs-12 col-sm-6">
       <h1>
@@ -9,11 +10,6 @@
           <small>{{ vm.message }}</small>
         </p>
       </h1>
-    </div>
-  </div>      
-
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
       <div class="well" ng-repeat="meal in vm.meals" ng-style="vm.styleMealplanInput">
         <div class="pull-right">
           <!--<img src="#">-->
