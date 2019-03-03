@@ -35,7 +35,7 @@
           console.log(ingredient);
           vm.message = ingredient.data.message;
         }, function(e) {
-          vm.message = "Could not find any substitutes for " + vm.ingredientParams.ingredientName;
+          vm.message = "Could not find any substitutes for " + ingredientParams.ingredientName;
           console.log(e);
         })
     }
