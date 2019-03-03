@@ -47,7 +47,7 @@
           </p>
           <div class="col-xs-12 col-sm-10">
             <input type="text" class="form-control" id="calories" ng-model="vm.calorieParams.targetCalories" name="calories" required/>
-            <span ng-show="vm.targetCaloriesInvalid"> Please enter a value for calorie target</span>
+            <span ng-show="vm.targetCaloriesInvalid" ng-style="vm.errorInput"> Please enter a value for calorie target</span>
           </div>
         </div>
         <button type="submit" class="btn btn-primary pull-right">Get daily Meal Plan</button>

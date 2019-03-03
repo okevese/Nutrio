@@ -17,6 +17,10 @@
       "border-radius": "10px"
     };
 
+    vm.errorInput = {
+      "color": "#f3c4a3"
+    };
+
     vm.calorieParams = {
       timeFrame: 'day'
     };

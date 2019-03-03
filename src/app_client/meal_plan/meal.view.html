@@ -48,7 +48,7 @@
           </p>
           <div class="col-xs-12 col-sm-10">
             <input type="text" class="form-control" id="diet" ng-model="vm.mealParams.diet" name="diet" required/>
-            <span ng-show="vm.dietInvalid">Please enter a value for diet</span>
+            <span ng-show="vm.dietInvalid" ng-style="vm.errorInput">Please enter a value for diet</span>
           </div>
         </div>
         <div class="form-group">
@@ -65,7 +65,7 @@
           </p>
           <div class="col-xs-12 col-sm-10">
             <input type="text" class="form-control" id="calories" ng-model="vm.mealParams.targetCalories" name="calories" required/>
-            <span ng-show="vm.targetCaloriesInvalid"> Please enter a value for target calories</span>
+            <span ng-show="vm.targetCaloriesInvalid" ng-style="vm.errorInput"> Please enter a value for target calories</span>
           </div>
         </div>
         <button type="submit" class="btn btn-primary pull-right">Get daily meal plan</button>

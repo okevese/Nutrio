@@ -13,6 +13,10 @@
 
     vm.ingredient = { };
 
+    vm.errorInput = {
+      "color": "#f3c4a3"
+    };
+
     vm.ingredientInvalid = false;
 
     vm.onSubmit = function() {

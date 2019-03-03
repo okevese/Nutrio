@@ -16,6 +16,9 @@
       "border-color": "transparent", 
       "border-radius": "10px"
     };
+    vm.errorInput = {
+      "color": "#f3c4a3"
+    };
 
     vm.mealParams = {
       timeFrame: 'day'
