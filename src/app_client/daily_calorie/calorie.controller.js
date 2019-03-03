@@ -37,7 +37,7 @@
     vm.displayRecipeDailyCalorie = function(calorieParams) {
       vm.message = "Loading daily calorie recipes...";
 
-      dailyCalorieData.getDailyCalorie(vm.calorieParams)
+      dailyCalorieData.getDailyCalorie(calorieParams)
         .then(function(meals) {
           if(meals.data.recipeDailyCalorie.meals[0].id) vm.message = "";
           console.log(meals);
