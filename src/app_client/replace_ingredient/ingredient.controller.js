@@ -16,15 +16,17 @@
     vm.ingredientInvalid = false;
 
     vm.onSubmit = function() {
-      console.log('in submit')
-      
-  
-      vm.displayReplaceIngredient(vm.ingredient);
-      
+      if(!vm.ingredientForm.ingredient.$valid) {
+        vm.ingredientInvalid = true;
+      }
+
+      if(vm.ingredientForm.$valid) {
+        vm.displayReplaceIngredient(vm.ingredient);
+      }
     }
 
-    vm.displayReplaceIngredient = function(ingredient) {
-      replaceIngredientData(vm.ingredient)
+    vm.displayReplaceIngredient = function(ingredients) {
+      replaceIngredientData(ingredients)
         .then(function(ingredient) {
           console.log(ingredient);
         }, function(e) {

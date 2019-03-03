@@ -14,14 +14,15 @@
   
   <div class="row">
     <div class="col-xs-12 col-sm-10">
-  
-      <div class="input-group">
-        <input type="text" class="form-control" id="ingredient" name="ingredient" ng-model="vm.ingredient.ingredientName" placeholder="Search for a replacement..." required>
-        <span ng-show="vm.ingredientInvalid"> Please enter an ingredient to search a replacement for</span>
-        <span class="input-group-btn">
-          <button ng-submit="vm.onSubmit()" type="submit" class="btn btn-primary">Go</button>
-        </span>
-      </div>
+      <form class="form-orizontal" name="vm.ingredientForm" ng-submit="vm.onSubmit()" role="form" novalidate>
+        <div class="input-group">
+          <input type="text" class="form-control" id="ingredient" name="ingredient" ng-model="vm.ingredient.ingredientName" placeholder="Search for a replacement..." required>
+          <span ng-show="vm.ingredientInvalid"> Please enter an ingredient to search a replacement for</span>
+          <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary">Go</button>
+          </span>
+        </div>
+      </form>
     
     </div>
   </div>
