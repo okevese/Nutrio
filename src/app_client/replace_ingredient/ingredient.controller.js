@@ -11,7 +11,7 @@
       strapline: "Find a similar ingredients"
     };
 
-    vm.ingredient = { };
+    vm.ingredientParams = { };
 
     vm.errorInput = {
       "color": "#f3c4a3"
@@ -25,15 +25,17 @@
       }
 
       if(vm.ingredientForm.$valid) {
-        vm.displayReplaceIngredient(vm.ingredient);
+        vm.displayReplaceIngredient(vm.ingredientParams);
       }
     }
 
-    vm.displayReplaceIngredient = function(ingredients) {
-      replaceIngredientData(ingredients)
+    vm.displayReplaceIngredient = function(ingredientParams) {
+      replaceIngredientData(ingredientParams)
         .then(function(ingredient) {
           console.log(ingredient);
+          vm.message = ingredient.data.message;
         }, function(e) {
+          vm.message = "Could not find any substitutes for " + vm.ingredientParams.ingredientName;
           console.log(e);
         })
     }

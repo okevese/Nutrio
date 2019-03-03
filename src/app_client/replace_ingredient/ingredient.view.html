@@ -6,7 +6,7 @@
     <div class="col-xs-12 col-sm-6">
       <h1>
         <p class="text-center">
-          <small> {{ vm.message }}</small>
+          <small> </small>
         </p>
       </h1>
     </div>
@@ -16,7 +16,7 @@
     <div class="col-xs-12 col-sm-10">
       <form class="form-orizontal" name="vm.ingredientForm" ng-submit="vm.onSubmit()" role="form" novalidate>
         <div class="input-group">
-          <input type="text" class="form-control" id="ingredient" name="ingredient" ng-model="vm.ingredient.ingredientName" placeholder="Search for a replacement..." required> 
+          <input type="text" class="form-control" id="ingredient" name="ingredient" ng-model="vm.ingredientParams.ingredientName" placeholder="Search for a replacement..." required> 
           <span class="input-group-btn">
             <button type="submit" class="btn btn-primary">Go</button>
           </span>
@@ -26,6 +26,13 @@
     
     </div>
   </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <h1>
+        <p class="text-center"> <small>{{ vm.message }}</small></p>
+      </h1>
+    </div>
+  </div>
 
   <footer-generic></footer-generic>
-</div>
+</div> 
