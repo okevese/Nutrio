@@ -5,6 +5,8 @@ mongoose.Promise = global.Promise;
 import config from '../../config/index';
 
 const dbURI = config.dbURI;
+
+mongoose.set('useCreateIndex', true);
 mongoose.connect(dbURI, { useNewUrlParser: true });
 const db = mongoose.connection;
 
