@@ -1,9 +1,9 @@
 
 import mongoose from 'mongoose';
-import RecipeDailyCalorie from '../models/RecipeDailyCalorie';
+import Meal from '../models/Meal';
 
 const recipeDailyCalorie = (req, res, next) => {
-  const dailyCalorie = new RecipeDailyCalorie({
+  const dailyCalorie = new Meal({
     meals: res.locals.dailyCalorie.meals,
     nutrients: res.locals.dailyCalorie.nutrients
   });
