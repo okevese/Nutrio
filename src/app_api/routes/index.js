@@ -30,7 +30,7 @@ import unknownRoute from '../middleware/errorHandlers/undefinedRoute';
 
 router.get('/joke', getFoodJoke, foodJoke);
 router.get('/trivia', getFoodTrivia, foodTrivia);
-router.get('/meal_plan', getMealPlan, mealPlan);
+router.get('/meal_plan', getMealPlan);
 router.get('/answer', getQuickAnswer, quickAnswer);
 router.get('/daily_calorie_recipe', getRecipeDailyCalorie, recipeDailyCalorie);
 router.get('/recipe_instructions', getRecipeInstructions, recipeInstructions);

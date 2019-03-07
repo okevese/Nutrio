@@ -46,9 +46,9 @@
 
       mealPlanData.getMeals(mealParams)
         .then(function(meals) {
-          if(meals.data.mealPlan._id) vm.message = "";
-          vm.meals = meals.data.mealPlan.meals;
-          vm.nutrients = meals.data.mealPlan.nutrients;
+          if(meals.data.meals[0].id) vm.message = "";
+          vm.meals = meals.data.meals;
+          vm.nutrients = meals.data.nutrients;
         }, function(e) {
           vm.message = "Error while loading meals";
           console.log(e);
