@@ -30,8 +30,7 @@ const getRecipeDailyCalorie = (req, res, next) => {
       return next(err);
     }
     console.log(response.body);
-    res.locals.dailyCalorie = response.body;
-    next();
+    res.status(200).send(response.body);
   });
 }
 

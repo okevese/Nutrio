@@ -43,10 +43,9 @@
 
       dailyCalorieData.getDailyCalorie(calorieParams)
         .then(function(meals) {
-          if(meals.data.recipeDailyCalorie.meals[0].id) vm.message = "";
-          console.log(meals);
-          vm.meals = meals.data.recipeDailyCalorie.meals;
-          vm.nutrients = meals.data.recipeDailyCalorie.nutrients;
+          if(meals.data.meals[0].id) vm.message = "";
+          vm.meals = meals.data.meals;
+          vm.nutrients = meals.data.nutrients;
         }, function(e) {
           console.log(e);
         })

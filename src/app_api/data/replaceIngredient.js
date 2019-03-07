@@ -32,9 +32,7 @@ const getReplaceIngredient =  (req, res, next) => {
       err.status = 404;
       return next(err);
     }
-    
-    res.locals.ingredient = response.body;
-    next();
+    res.status(200).send(response.body);
   });
 };
 

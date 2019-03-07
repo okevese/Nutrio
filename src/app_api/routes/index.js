@@ -32,9 +32,9 @@ router.get('/joke', getFoodJoke, foodJoke);
 router.get('/trivia', getFoodTrivia, foodTrivia);
 router.get('/meal_plan', getMealPlan);
 router.get('/answer', getQuickAnswer, quickAnswer);
-router.get('/daily_calorie_recipe', getRecipeDailyCalorie, recipeDailyCalorie);
+router.get('/daily_calorie_recipe', getRecipeDailyCalorie);
 router.get('/recipe_instructions', getRecipeInstructions, recipeInstructions);
-router.get('/replace_ingredient', getReplaceIngredient, replaceIngredient);
+router.get('/replace_ingredient', getReplaceIngredient);
 
 router.post('/meal_plan', mealPlan);
 router.get('*', unknownRoute);
