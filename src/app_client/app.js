@@ -23,6 +23,11 @@
         controller: 'replaceIngredientCtrl',
         controllerAs: 'vm'
       })
+      .when('/instructions/:mealid', {
+        templateUrl: '/recipe_instructions/instructions.view.html',
+        controller: 'recipeInstructionsCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true); 
   }
