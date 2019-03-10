@@ -46,6 +46,7 @@
 
       mealPlanData.getMeals(mealParams)
         .then(function(meals) {
+          console.log(meals);
           if(meals.data.meals[0].id) vm.message = "";
           vm.meals = meals.data.meals;
           vm.nutrients = meals.data.nutrients;

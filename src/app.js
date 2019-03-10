@@ -34,6 +34,7 @@ let appClientFiles = [
   'replace_ingredient/ingredient.controller.js',
   'recipe_instructions/instructions.controller.js',
   'common/services/replaceIngredientData.service.js',
+  'common/services/instructions.service.js',
   'common/services/triviaData.service.js',
   'common/services/mealPlanData.service.js',
   'common/services/dailyCalorieData.service.js',

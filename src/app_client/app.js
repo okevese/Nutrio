@@ -25,7 +25,7 @@
       })
       .when('/instructions/:mealid', {
         templateUrl: '/recipe_instructions/instructions.view.html',
-        controller: 'recipeInstructionsCtrl',
+        controller: 'instructionsCtrl',
         controllerAs: 'vm'
       })
       .otherwise({redirectTo: '/'});

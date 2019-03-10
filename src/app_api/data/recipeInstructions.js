@@ -4,7 +4,7 @@ const secret = config.food_api_secret;
 const host = config.spoonacular_api.hostname;
 
 const getRecipeInstructions = (req, res, next) => {
-  const endpoint = `/recipes/${req.query.id}/analyzedInstructions`;
+  const endpoint = `/recipes/${req.params.mealid}/analyzedInstructions`;
   const url = host + endpoint;
   
   console.log(url);
@@ -21,8 +21,7 @@ const getRecipeInstructions = (req, res, next) => {
       console.error(response.error);
       return next(err);
     }
-    res.locals.recipeInfo = response.body[0];
-    next();
+    res.status(200).send(response.body[0]);
   });
 };
 

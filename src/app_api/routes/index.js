@@ -28,12 +28,12 @@ import recipeInstructions from '../middleware/recipeInstructions';
 import unknownRoute from '../middleware/errorHandlers/undefinedRoute';
 
 
-router.get('/joke', getFoodJoke, foodJoke);
+router.get('/joke', getFoodJoke);
 router.get('/trivia', getFoodTrivia);
 router.get('/meal_plan', getMealPlan);
 router.get('/answer', getQuickAnswer, quickAnswer);
 router.get('/daily_calorie_recipe', getRecipeDailyCalorie);
-router.get('/recipe_instructions', getRecipeInstructions, recipeInstructions);
+router.get('/recipe_instructions/:mealid', getRecipeInstructions);
 router.get('/replace_ingredient', getReplaceIngredient);
 
 router.post('/meal_plan', mealPlan);
