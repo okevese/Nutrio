@@ -92,7 +92,6 @@ const angularApp = (req, res) => {
 
 export { 
   foodJoke,
-  recipeInstructions,
   about,
   angularApp
 };
