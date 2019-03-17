@@ -17,7 +17,7 @@
         <div class="col-xs-12">
           <h3>
             <span class="badge pull-right badge-default">{{ meal.readyInMinutes }} min</span>
-            <p>{{ meal.title }}</p>
+            <a href="/instructions/{{ meal.id }}">{{ meal.title }}</a>
           </h3>
           <input type="checkbox" class="pull-right">
           <p>{{ meal.servings }} servings</p>

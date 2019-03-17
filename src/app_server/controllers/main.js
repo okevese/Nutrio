@@ -65,7 +65,7 @@ const renderRecipeInstructions = (req, res, responseBody) => {
   for (let step of responseBody.recipe.steps) { // `steps` is an array of objects, 'step`
     for (let ingredient of step.ingredients) {  // Each 'step` has `ingredients`, an array of objects or empty  
       if (!ingredientList.some(item => item.name === ingredient.name)) { // Removes repeating ingredients
-        ingredientList.push(ingredient);
+        ingredientList.push(ingredient.name);
       }  
     } 
   }

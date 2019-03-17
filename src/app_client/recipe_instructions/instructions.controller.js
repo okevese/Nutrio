@@ -14,9 +14,20 @@
     
     instructionsData(vm.mealid)
       .then(function(instructions) {
-        console.log(instructions);
+        vm.steps = instructions.data.steps;
+        vm.ingredientList = [];
+        
+        angular.forEach(vm.steps, function(step) {
+          angular.forEach(step.ingredients, function(ingredient) {
+            if (!vm.ingredientList.includes(ingredient.name)) { // Removes repeating ingredients
+              vm.ingredientList.push(ingredient.name);
+            }  
+          });
+        });
+        console.log(vm.ingredientList);
+        
       }, function(e) {
 
-      })
+      });
   }  
 })();
