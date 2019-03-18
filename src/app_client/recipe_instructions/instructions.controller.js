@@ -18,11 +18,14 @@
         vm.ingredientList = [];
         
         angular.forEach(vm.steps, function(step) {
-          angular.forEach(step.ingredients, function(ingredient) {
-            if (!vm.ingredientList.includes(ingredient.name)) { // Removes repeating ingredients
-              vm.ingredientList.push(ingredient.name);
-            }  
-          });
+          if (step.ingredients.length !== 0) {  // The step may not require ingredients, i.e empty array
+            angular.forEach(step.ingredients, function(ingredient) {
+              if (!vm.ingredientList.includes(ingredient.name)) { // Removes repeating ingredients
+                vm.ingredientList.push(ingredient.name);
+              }  
+            });
+          }
+          
         });
         console.log(vm.ingredientList);
         
