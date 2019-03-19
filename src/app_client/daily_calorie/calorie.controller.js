@@ -45,6 +45,7 @@
         .then(function(meals) {
           if(meals.data.meals[0].id) vm.message = "";
           vm.meals = meals.data.meals;
+          console.log(vm.meals)
           vm.nutrients = meals.data.nutrients;
         }, function(e) {
           console.log(e);

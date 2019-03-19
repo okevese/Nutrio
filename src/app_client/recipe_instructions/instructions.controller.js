@@ -24,8 +24,7 @@
               vm.ingredientList.push(ingredient);
               unique[ingredient.id] = true;
             }  
-          });
-          
+          });          
         });
         console.log(vm.ingredientList);
         

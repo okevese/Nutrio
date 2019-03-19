@@ -11,8 +11,10 @@
         </p>
       </h1>
       <div class="well" ng-repeat="meal in vm.meals" ng-style="vm.styleMealplanInput">
-        <div class="pull-right">
-          <!--<img src="#">-->
+        <div class="media">
+          <a class="pull-left" href="#">
+            <img class="media-object" src="https://spoonacular.com/recipeImages/{{ meal.image }}" alt="meal image"/>
+          </a>
         </div>
         <div class="col-xs-12">
           <h3>
