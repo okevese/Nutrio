@@ -16,15 +16,15 @@
       .then(function(instructions) {
         vm.steps = instructions.data.steps;
         vm.ingredientList = [];
+        var unique = {};
         
         angular.forEach(vm.steps, function(step) {
-          if (step.ingredients.length !== 0) {  // The step may not require ingredients, i.e empty array
-            angular.forEach(step.ingredients, function(ingredient) {
-              if (!vm.ingredientList.includes(ingredient.name)) { // Removes repeating ingredients
-                vm.ingredientList.push(ingredient.name);
-              }  
-            });
-          }
+          angular.forEach(step.ingredients, function(ingredient) {
+            if(!unique[ingredient.id]) { // To remove repeating ingredients in each step
+              vm.ingredientList.push(ingredient);
+              unique[ingredient.id] = true;
+            }  
+          });
           
         });
         console.log(vm.ingredientList);

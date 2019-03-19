@@ -11,11 +11,11 @@
       <div ng-repeat="ingredient in vm.ingredientList">
         <div class="media">
           <a class="pull-left" href="#">
-            <img class="media-object" src="https://spoonacular.com/cdn/ingredients_100x100/" alt="ingredient image"/>
+            <img class="media-object" src="https://spoonacular.com/cdn/ingredients_100x100/{{ ingredient.image }}" alt="ingredient image"/>
           </a>
           <div class="media-body">
             <!-- name of the ingredient-->
-            <h3 class="media-heading">{{ ingredient }} </h3>
+            <h3 class="media-heading">{{ ingredient.name }} </h3>
           </div>
         </div>
       </div>
