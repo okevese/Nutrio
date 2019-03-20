@@ -15,9 +15,9 @@
           </a>
           <div class="media-body">
             <!-- name of the ingredient-->
-            <h3 class="media-heading">{{ ingredient.name }} </h3>
+            <p class="media-heading" ng-style="vm.styleFont">{{ ingredient.name }} </p>
           </div>
-        </div>
+        </div><br />
       </div>
 
     </div>
@@ -25,7 +25,10 @@
     
     <div class="col-xs-12 col-sm-6 pull-right">
       <h2>Steps</h2>
-      <!-- The number for each step in `responseBody.recipe.steps`-->
+      <div ng-repeat="step in vm.steps" ng-style="vm.styleFont">
+        <p> {{ step.number }}.</p>  
+        <p>{{ step.step }}</p><br />
+      </div>
       
       
     </div> 

@@ -11,13 +11,18 @@
       title: 'Recipe Instructions',
       strapline: 'Instructions to prepare your choice meal'
     };
+
+    vm.styleFont = {
+      "font-size": "20px"
+    };
     
     instructionsData(vm.mealid)
       .then(function(instructions) {
         vm.steps = instructions.data.steps;
         vm.ingredientList = [];
+        vm.equipmentList = [];
         var unique = {};
-        
+        console.log(vm.steps);
         angular.forEach(vm.steps, function(step) {
           angular.forEach(step.ingredients, function(ingredient) {
             if(!unique[ingredient.id]) { // To remove repeating ingredients in each step
