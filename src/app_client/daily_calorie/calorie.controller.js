@@ -17,6 +17,10 @@
       "border-radius": "10px"
     };
 
+    vm.styleNutrientDisplay = {
+      "margin-top": "18px"
+    };
+
     vm.errorInput = {
       "color": "#f3c4a3"
     };
