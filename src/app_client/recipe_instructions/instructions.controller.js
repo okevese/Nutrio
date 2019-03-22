@@ -20,7 +20,6 @@
       .then(function(instructions) {
         vm.steps = instructions.data.steps;
         vm.ingredientList = [];
-        vm.equipmentList = [];
         var unique = {};
         console.log(vm.steps);
         angular.forEach(vm.steps, function(step) {
