@@ -42,6 +42,11 @@
       }
     }
 
+    // To save selected meal to the database
+    vm.saveMeal = function() {
+      
+    }
+
     vm.displayRecipeDailyCalorie = function(calorieParams) {
       vm.message = "Loading daily calorie recipes...";
 

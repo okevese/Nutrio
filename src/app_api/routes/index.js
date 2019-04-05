@@ -48,4 +48,8 @@ router.post('/register', [
 router.post('/login', [check('email').exists(), check('password').exists()], login);
 router.post('/visual_nutrients', getVisualRecipeNutrition(), visualRecipeNutrition);
 
+
+// Database interaction routes
+router.post('/daily_calorie_recipe:mealid', recipeDailyCalorie);
+
 export default router
