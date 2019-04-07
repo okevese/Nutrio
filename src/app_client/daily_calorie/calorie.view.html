@@ -13,16 +13,16 @@
       <div class="well" ng-repeat="meal in vm.meals" ng-style="vm.styleCalorieInput">
         <div class="media">
           <a class="pull-left" href="#">
-            <img class="media-object" src="https://spoonacular.com/recipeImages/{{ meal.image }}" alt="meal image"/>
+            <img class="media-object" src="https://spoonacular.com/recipeImages/{{ vm.meal.image = meal.image }}" alt="meal image"/>
           </a>
         </div>
         <div class="col-xs-12">
           <h3>
-            <span class="badge pull-right badge-default">{{ meal.readyInMinutes }} min</span>
-            <a href="/instructions/{{ meal.id }}">{{ meal.title }}</a>
+            <span class="badge pull-right badge-default">{{ vm.meal.readyInMinutes = meal.readyInMinutes }} min</span>
+            <a href="/instructions/{{ vm.meal.id = meal.id }}">{{ vm.meal.title = meal.title }}</a>
           </h3>
-          <input type="checkbox" ng-model="vm.saveMeal()" class="pull-right">
-          <p>{{ meal.servings }} servings</p>
+          <input type="checkbox" class="pull-right">
+          <p>{{ vm.meal.servings = meal.servings }} servings</p>
         </div>
       </div>
     </div>
