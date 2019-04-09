@@ -42,13 +42,14 @@
       }
     }
     
-    vm.meal = {
-      image: '',
-      readyInMinutes: 0,
-      id: 0,
-      title: '',
-      servings: 0
-    };
+    
+    vm.saveMeal = function(meal) {
+      if(meal.isChecked) {
+        console.log('yes one was selected' + meal.title);
+      } else {
+        console.log('Not selected' + meal);
+      }
+    }
     
 
     vm.displayRecipeDailyCalorie = function(calorieParams) {
