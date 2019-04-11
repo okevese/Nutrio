@@ -45,9 +45,13 @@
     
     vm.saveMeal = function(meal) {
       if(meal.isChecked) {
-        console.log('yes one was selected' + meal.title);
-      } else {
-        console.log('Not selected' + meal);
+        dailyCalorieData.saveDailyCalorieMeal({
+          id: meal.id,
+          title: meal.title,
+          readyInMinutes: meal.readyInMinutes,
+          servings: meal.servings,
+          image: meal.image
+        })
       }
     }
     

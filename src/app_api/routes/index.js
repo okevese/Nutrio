@@ -36,7 +36,6 @@ router.get('/daily_calorie_recipe', getRecipeDailyCalorie);
 router.get('/recipe_instructions/:mealid', getRecipeInstructions);
 router.get('/replace_ingredient', getReplaceIngredient);
 
-router.post('/meal_plan', mealPlan);
 router.get('*', unknownRoute);
 
 router.post('/register', [
@@ -50,6 +49,6 @@ router.post('/visual_nutrients', getVisualRecipeNutrition(), visualRecipeNutriti
 
 
 // Database interaction routes
-router.post('/daily_calorie_recipe:mealid', recipeDailyCalorie);
+router.post('/daily_calorie_recipe/:mealid', recipeDailyCalorie);
 
 export default router
