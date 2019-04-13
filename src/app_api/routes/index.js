@@ -10,19 +10,13 @@ const auth = jwt({
 
 import { register, login } from '../middleware/authentication';
 import getFoodJoke from '../data/foodJoke';
-import foodJoke from '../middleware/foodJoke';
 import getFoodTrivia from '../data/foodTrivia';
-import foodTrivia from '../middleware/foodTrivia';
 import getMealPlan from '../data/mealPlan';
-import mealPlan from '../middleware/mealPlan';
 import getQuickAnswer from '../data/quickAnswer';
-import quickAnswer from '../middleware/quickAnswer';
 import getRecipeDailyCalorie from '../data/recipeDailyCalorie';
-import recipeDailyCalorie from '../middleware/recipeDailyCalorie';
+import saveMeal from '../middleware/meal';
 import getReplaceIngredient from '../data/replaceIngredient';
-import replaceIngredient from '../middleware/replaceIngredient';
 import getVisualRecipeNutrition from '../data/visualRecipeNutrition';
-import visualRecipeNutrition from '../middleware/visualRecipeNutrition';
 import getRecipeInstructions from '../data/recipeInstructions';
 import recipeInstructions from '../middleware/recipeInstructions';
 import unknownRoute from '../middleware/errorHandlers/undefinedRoute';
@@ -31,7 +25,7 @@ import unknownRoute from '../middleware/errorHandlers/undefinedRoute';
 router.get('/joke', getFoodJoke);
 router.get('/trivia', getFoodTrivia);
 router.get('/meal_plan', getMealPlan);
-router.get('/answer', getQuickAnswer, quickAnswer);
+router.get('/answer', getQuickAnswer);
 router.get('/daily_calorie_recipe', getRecipeDailyCalorie);
 router.get('/recipe_instructions/:mealid', getRecipeInstructions);
 router.get('/replace_ingredient', getReplaceIngredient);
@@ -45,10 +39,10 @@ router.post('/register', [
     .isLength({ min: 6 }).withMessage('must be at least 6 chars long')], register);
     
 router.post('/login', [check('email').exists(), check('password').exists()], login);
-router.post('/visual_nutrients', getVisualRecipeNutrition(), visualRecipeNutrition);
+router.post('/visual_nutrients', getVisualRecipeNutrition());
 
 
 // Database interaction routes
-router.post('/daily_calorie_recipe/:mealid', recipeDailyCalorie);
+router.post('/daily_calorie_recipe/:mealid', saveMeal);
 
 export default router

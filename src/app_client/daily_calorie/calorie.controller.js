@@ -10,7 +10,7 @@
       title: "Daily Calorie Recipes",
       strapline: "Find multiple recipes that, when added up, reach your daily caloric needs."
     };
-
+    
     vm.styleCalorieInput = {
       "background-color": "#3cb9c6",
       "border-color": "transparent",
