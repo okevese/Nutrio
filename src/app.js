@@ -38,6 +38,7 @@ let appClientFiles = [
   'common/services/triviaData.service.js',
   'common/services/mealPlanData.service.js',
   'common/services/dailyCalorieData.service.js',
+  'common/services/saveMeal.service.js',
   'common/directives/footerGeneric/footerGeneric.directive.js',
   'common/directives/navigation/navigation.directive.js',
   'common/directives/pageHeader/pageHeader.directive.js'

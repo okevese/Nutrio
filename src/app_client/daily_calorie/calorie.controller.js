@@ -3,8 +3,8 @@
     .module('nutrioApp')
     .controller('dailyCalorieCtrl', dailyCalorieCtrl);
 
-  dailyCalorieCtrl.$inject = ['dailyCalorieData'];  
-  function dailyCalorieCtrl(dailyCalorieData) {
+  dailyCalorieCtrl.$inject = ['dailyCalorieData', 'saveMealData'];  
+  function dailyCalorieCtrl(dailyCalorieData, saveMealData) {
     var vm = this;
     vm.pageHeader = {
       title: "Daily Calorie Recipes",
@@ -43,9 +43,9 @@
     }
     
     
-    vm.saveMeal = function(meal) {
+    vm.saveSelectedMeal = function(meal) {
       if(meal.isChecked) {
-        dailyCalorieData.saveDailyCalorieMeal({
+        saveMealData.saveMeal({
           id: meal.id,
           title: meal.title,
           readyInMinutes: meal.readyInMinutes,

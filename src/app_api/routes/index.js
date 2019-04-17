@@ -43,6 +43,6 @@ router.post('/visual_nutrients', getVisualRecipeNutrition());
 
 
 // Database interaction routes
-router.post('/daily_calorie_recipe/:mealid', saveMeal);
+router.post('/meal', saveMeal);
 
 export default router

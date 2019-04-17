@@ -3,8 +3,8 @@
     .module('nutrioApp')
     .controller('mealPlanCtrl', mealPlanCtrl);
 
-  mealPlanCtrl.$inject = ['mealPlanData'];  
-  function mealPlanCtrl(mealPlanData) {
+  mealPlanCtrl.$inject = ['mealPlanData', 'saveMealData'];  
+  function mealPlanCtrl(mealPlanData, saveMealData) {
     var vm = this;
     vm.pageHeader = {
       title: 'Meal Plan',
@@ -45,6 +45,20 @@
         vm.displayDailyMealPlan(vm.mealParams);
       }
     }
+
+
+    vm.saveSelectedMeal = function(meal) {
+      if(meal.isChecked) {
+        saveMealData.saveMeal({
+          id: meal.id,
+          title: meal.title,
+          readyInMinutes: meal.readyInMinutes,
+          servings: meal.servings,
+          image: meal.image
+        })
+      }
+    }
+    
 
     vm.displayDailyMealPlan = function(mealParams) {
       vm.message = "Loading meal plan...";

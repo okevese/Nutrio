@@ -14,19 +14,9 @@
         params: calorieParams
       });
     }; 
-
-    var saveDailyCalorieMeal = function(meal) {
-      console.log(meal);
-      return $http({
-        method: "POST",
-        url: '/api/v1/daily_calorie_recipe/' + meal.id,
-        data: meal
-      })
-    };
-
+  
     return {
-      getDailyCalorie: getDailyCalorie,
-      saveDailyCalorieMeal: saveDailyCalorieMeal
+      getDailyCalorie: getDailyCalorie
     };
   }
 
