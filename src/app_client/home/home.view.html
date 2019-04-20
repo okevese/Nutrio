@@ -2,7 +2,15 @@
 
 <div class="container">
   <page-header content="vm.pageHeader"></page-header>
+
+  
   <div class="row" ng-controller="homeCtrl">
+    <div class="full-width-bg">
+      <p>
+        <img ng-style="vm.styleHeaderImage" ng-src="{{ vm.imageUrl }}" alt="foodies unite!" width="2460" height="200">
+      </p>
+    </div>
+
     <h1>
       <p class="text-center">
         <small>{{ vm.message }}</small>

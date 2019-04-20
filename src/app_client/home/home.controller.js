@@ -11,6 +11,19 @@
       strapline: 'Find diets for healthy living'
     };
 
+    vm.imageUrl = "../home/breakfast.jpg";
+
+    vm.styleHeaderImage = {
+      "display": "block",
+      "margin-left": "auto",
+      "margin-right": "auto",
+      "vertical-align": "middle",
+      "height": "auto",
+      "max-width": "100%",
+      "border": "0",
+      "box-sizing": "border-box",
+    };
+
     vm.message = "Loading food trivia...";
     triviaData
       .then(function(trivia) {
