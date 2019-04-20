@@ -18,8 +18,8 @@
       "margin-left": "auto",
       "margin-right": "auto",
       "vertical-align": "middle",
-      "height": "auto",
       "max-width": "100%",
+      "max-height": "100%",
       "border": "0",
       "box-sizing": "border-box",
     };
