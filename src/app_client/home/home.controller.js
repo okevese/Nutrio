@@ -11,17 +11,16 @@
       strapline: 'Find diets for healthy living'
     };
 
-    vm.imageUrl = "../home/breakfast.jpg";
+    vm.breakfastImageUrl = "../home/breakfast.jpg";
+    vm.hamImageUrl = "../home/hamburgers.jpg";
+    vm.meatballsImageUrl = "../home/meatballs.jpg";
 
-    vm.styleHeaderImage = {
-      "display": "block",
+    vm.styleImage = {
+      "width": "200px",
+      "height": "200px",
       "margin-left": "auto",
       "margin-right": "auto",
-      "vertical-align": "middle",
-      "max-width": "100%",
-      "max-height": "100%",
-      "border": "0",
-      "box-sizing": "border-box",
+      "display": "block",
     };
 
     vm.message = "Loading food trivia...";

@@ -5,11 +5,6 @@
 
   
   <div class="row" ng-controller="homeCtrl">
-    <div class="full-width-bg">
-      <p>
-        <img ng-style="vm.styleHeaderImage" ng-src="{{ vm.imageUrl }}" alt="foodies unite!" width="2460" height="950">
-      </p>
-    </div>
 
     <h1>
       <p class="text-center">
@@ -20,11 +15,32 @@
       </p>
     </h1>
   </div>
-  <div class="span6">
-    <blockquote>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-    </blockquote>
+
+  <div class="col-md-4 col-sm-4 col-lg-4">
+    <p>
+      <img class="img-circle" ng-style="vm.styleImage" ng-src="{{ vm.breakfastImageUrl }}" alt="140x140">
+    </p>
+    <h2>Meal suggestions</h2>
+    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>      
   </div>
-  <footer-generic></footer-generic>
+
+  <div class="col-md-4 col-sm-4 col-lg-4">
+    <p>
+      <img class="img-circle" ng-style="vm.styleImage" ng-src="{{ vm.hamImageUrl }}" alt="140x140">
+    </p>
+    <h2>Nutrition composition</h2>
+    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>      
+  </div>
+
+  <div class="col-md-4 col-sm-4 col-lg-4">
+    <p>
+      <img class="img-circle" ng-style="vm.styleImage" ng-src="{{ vm.meatballsImageUrl }}" alt="140x140">
+    </p>
+    <h2>Recipes</h2>
+    <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>      
+  </div>
+  
+  <div class= "colxs-12 col-sm-6">
+      <footer-generic></footer-generic>
+  </div>
 </div>
