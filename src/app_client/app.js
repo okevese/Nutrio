@@ -28,6 +28,11 @@
         controller: 'instructionsCtrl',
         controllerAs: 'vm'
       })
+      .when('/user/:userid', {
+        templateUrl: '/user/user.view.html',
+        controller: 'userCtrl',
+        controllerAs: 'vm'
+      })
       .otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true); 
   }
