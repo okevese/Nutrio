@@ -17,7 +17,7 @@
         templateUrl: '/daily_calorie/calorie.view.html',
         controller: 'dailyCalorieCtrl',
         controllerAs: 'vm',
-        css: '/daily_calorie/calorie.css'
+        css: ['../public/stylesheets/style.css', '/daily_calorie/calorie.css']
       })
       .when('/replace_ingredient', {
         templateUrl: '/replace_ingredient/ingredient.view.html',

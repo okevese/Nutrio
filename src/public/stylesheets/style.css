@@ -1,0 +1,13 @@
+.well {
+  background-color: #3cb9c6;
+  border-color: transparent;
+  border-radius: 10px;
+}
+
+.panel {
+  margin-top: 18px;
+}
+
+.errorInput {
+  color: #f3c4a3;
+}
