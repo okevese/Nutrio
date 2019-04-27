@@ -1,5 +1,5 @@
 (function() {
-  angular.module('nutrioApp', ['ngRoute']);
+  angular.module('nutrioApp', ['ngRoute', 'routeStyles']);
 
   function config($routeProvider, $locationProvider) {
     $routeProvider
@@ -16,7 +16,8 @@
       .when('/daily_calorie', {
         templateUrl: '/daily_calorie/calorie.view.html',
         controller: 'dailyCalorieCtrl',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        css: '/daily_calorie/calorie.css'
       })
       .when('/replace_ingredient', {
         templateUrl: '/replace_ingredient/ingredient.view.html',
