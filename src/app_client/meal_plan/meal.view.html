@@ -10,7 +10,7 @@
           <small>{{ vm.message }}</small>
         </p>
       </h1>
-      <div class="well" ng-repeat="meal in vm.meals" ng-style="vm.styleMealplanInput">
+      <div class="well" ng-repeat="meal in vm.meals">
         <div class="media">
           <a class="pull-left" href="#">
             <img class="media-object" src="https://spoonacular.com/recipeImages/{{ meal.image }}" alt="meal image"/>
@@ -29,7 +29,7 @@
   
     <!-- Nutrient composition -->
     <div class="col-xs-12 col-sm-6">
-      <div class="panel panel-primary" ng-style="vm.styleNutrientDisplay">
+      <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">Nutrients</h3>
         </div>
@@ -51,7 +51,7 @@
           </p>
           <div class="col-xs-12 col-sm-10">
             <input type="text" class="form-control" id="diet" ng-model="vm.mealParams.diet" name="diet" required/>
-            <span ng-show="vm.dietInvalid" ng-style="vm.errorInput">Please enter a value for diet</span>
+            <span class="errorInput" ng-show="vm.dietInvalid">Please enter a value for diet</span>
           </div>
         </div>
         <div class="form-group">

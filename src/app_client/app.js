@@ -11,7 +11,8 @@
       .when('/meals', {
         templateUrl: '/meal_plan/meal.view.html',
         controller: 'mealPlanCtrl',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        css: '../public/stylesheets/style.css'
       })
       .when('/daily_calorie', {
         templateUrl: '/daily_calorie/calorie.view.html',
