@@ -1,4 +1,5 @@
 
+import mongoose from 'mongoose';
 import Meal from '../models/Meal';
 
 const saveMeal = (req, res, next) => {
@@ -15,9 +16,19 @@ const saveMeal = (req, res, next) => {
     .then(savedMeal => {
       res.status(200).json({ message: "saved success", savedMeal });
     })
-    .catch((e) => {
+    .catch(e => {
       next(e);
     });
 }
 
-export default saveMeal;
+
+const getSavedMeals = (req, res, next) => {
+  Meal.find({}).then(meals => {
+    res.status(200).json({ message: "success", meals });
+  })
+  .catch(e => {
+    next(e);
+  });
+}
+
+export { saveMeal, getSavedMeals };
