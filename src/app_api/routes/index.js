@@ -14,7 +14,7 @@ import getFoodTrivia from '../data/foodTrivia';
 import getMealPlan from '../data/mealPlan';
 import getQuickAnswer from '../data/quickAnswer';
 import getRecipeDailyCalorie from '../data/recipeDailyCalorie';
-import saveMeal from '../middleware/meal';
+import { saveMeal, getSavedMeals } from '../middleware/meal';
 import getReplaceIngredient from '../data/replaceIngredient';
 import getVisualRecipeNutrition from '../data/visualRecipeNutrition';
 import getRecipeInstructions from '../data/recipeInstructions';
@@ -30,7 +30,6 @@ router.get('/daily_calorie_recipe', getRecipeDailyCalorie);
 router.get('/recipe_instructions/:mealid', getRecipeInstructions);
 router.get('/replace_ingredient', getReplaceIngredient);
 
-router.get('*', unknownRoute);
 
 router.post('/register', [
   check('name').exists().withMessage('Name field is required'),
@@ -44,5 +43,8 @@ router.post('/visual_nutrients', getVisualRecipeNutrition());
 
 // Database interaction routes
 router.post('/meal', saveMeal);
+router.get('/meals', getSavedMeals);
+
+router.get('*', unknownRoute);
 
 export default router
