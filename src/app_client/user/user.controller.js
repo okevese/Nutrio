@@ -19,13 +19,7 @@
 
         if(meals.data.meals[0].id) vm.message = "";
         vm.meals = meals.data.meals;
-
-        angular.forEach(vm.meals, function(meal) {
-          var sizedImage = meal.image.split('');
-          sizedImage.splice(-5, 1, "_240x150");
-          meal.image = sizedImage.join('');
-          console.log(meal.image);
-        })
+       
       }, function(e) {
         console.log(e);
       })

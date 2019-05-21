@@ -5,11 +5,11 @@
   <div class="row" ng-controller="userCtrl">
     <div class="col-xs-12 col-sm-6" ng-repeat="meal in vm.meals">
       <ul class="media-list">
-        <li class="media"><!--
+        <li class="media">
           <a class="pull-left" href="#">
             <img class="media-object" src="https://spoonacular.com/recipeImages/{{ meal.image }}" alt="...">
-          </a>-->
-          <div class="media-body pull-right">
+          </a>
+          <div class="media-body pull-left">
             <h4 class="media-heading">{{ meal.title }}</h4>
             {{ meal.readyInMinutes }} min, {{ meal.servings }} servings.
           </div>
