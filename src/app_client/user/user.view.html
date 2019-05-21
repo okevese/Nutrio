@@ -10,7 +10,9 @@
             <img class="media-object" src="https://spoonacular.com/recipeImages/{{ meal.image }}" alt="...">
           </a>
           <div class="media-body pull-left">
-            <h4 class="media-heading">{{ meal.title }}</h4>
+            <h4 class="media-heading">
+              <a href="/instructions/{{ meal.id }}">{{ meal.title }}</a>
+            </h4>
             {{ meal.readyInMinutes }} min, {{ meal.servings }} servings.
           </div>
         </li>

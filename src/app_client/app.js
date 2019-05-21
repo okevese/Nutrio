@@ -33,7 +33,8 @@
       .when('/user/:userid', {
         templateUrl: '/user/user.view.html',
         controller: 'userCtrl',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        css: ['../public/stylesheets/style.css', '/user/user.css']
       })
       .otherwise({redirectTo: '/'});
     $locationProvider.html5Mode(true); 
