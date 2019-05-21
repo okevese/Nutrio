@@ -15,14 +15,19 @@
     vm.styleFont = {
       "font-size": "20px"
     };
-    
+
+    vm.message = "Loading recipe instructions";
+
     instructionsData(vm.mealid)
       .then(function(instructions) {
+
+        if (instructions.data.steps) vm.message = "";
+
         vm.steps = instructions.data.steps;
         vm.ingredientList = [];
         vm.equipmentList = [];
         var unique = {};
-        console.log(vm.steps);
+        
         angular.forEach(vm.steps, function(step) {
           angular.forEach(step.ingredients, function(ingredient) {
             if(!unique[ingredient.id]) { // To remove repeating ingredients in each step
@@ -34,7 +39,8 @@
         console.log(vm.ingredientList);
         
       }, function(e) {
-
+        console.log(e);
+        vm.message = "Error loading reciper instructions";
       });
   }  
 })();
