@@ -31,6 +31,7 @@
 
     vm.displayReplaceIngredient = function(ingredientParams) {
       vm.loadingMessage = "Searching for replacement ingredient...";
+      vm.substitute = "";
       vm.message = "";
 
       replaceIngredientData(ingredientParams)
