@@ -3,8 +3,9 @@
     .module('nutrioApp')
     .controller('mealPlanCtrl', mealPlanCtrl);
 
-  mealPlanCtrl.$inject = ['mealPlanData', 'saveMealData'];  
-  function mealPlanCtrl(mealPlanData, saveMealData) {
+  mealPlanCtrl.$inject = ['$rootScope', 'mealPlanData', 'saveMealData'];  
+  function mealPlanCtrl($rootScope, mealPlanData, saveMealData) {
+
     var vm = this;
     vm.pageHeader = {
       title: 'Meal Plan',
@@ -32,6 +33,10 @@
       }
     }
 
+    vm.selectedMealTitle = function(title) {
+      $rootScope.mealTitle = title; /* Do not be hasty, that is my motto ~ Treebeard */
+    }
+
 
     vm.saveSelectedMeal = function(meal) {
       if(meal.isChecked) {
@@ -48,12 +53,13 @@
 
     vm.displayDailyMealPlan = function(mealParams) {
       vm.message = "Loading meal plan...";
-
+      
       mealPlanData.getMeals(mealParams)
         .then(function(meals) {
           if(meals.data.meals[0].id) vm.message = "";
           vm.meals = meals.data.meals;
           vm.nutrients = meals.data.nutrients;
+         
         }, function(e) {
           vm.message = "Error while loading meals";
           console.log(e);

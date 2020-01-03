@@ -3,9 +3,11 @@
     .module('nutrioApp')
     .controller('instructionsCtrl', instructionsCtrl);
 
-  instructionsCtrl.$inject = ['$routeParams', 'instructionsData'];
-  function instructionsCtrl($routeParams, instructionsData) {
+  instructionsCtrl.$inject = ['$scope', '$rootScope', '$routeParams', 'instructionsData'];
+  function instructionsCtrl($scope, $rootScope, $routeParams, instructionsData) {
+    
     var vm = this;
+    vm.title = $rootScope.mealTitle;
     vm.mealid = $routeParams.mealid;
     vm.pageHeader = {
       title: 'Recipe Instructions',
