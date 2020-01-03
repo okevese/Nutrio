@@ -30,11 +30,18 @@
     }
 
     vm.displayReplaceIngredient = function(ingredientParams) {
+      vm.loadingMessage = "Searching for replacement ingredient...";
+      vm.message = "";
+
       replaceIngredientData(ingredientParams)
         .then(function(ingredient) {
-          console.log(ingredient);
+          console.log(ingredient.data.substitutes);
+          vm.substitute = ingredient.data.substitutes;
+          vm.loadingMessage = "";
           vm.message = ingredient.data.message;
         }, function(e) {
+          vm.loadingMessage = "";
+          vm.substitute = "";
           vm.message = "Could not find any substitutes for " + ingredientParams.ingredientName;
           console.log(e);
         })
